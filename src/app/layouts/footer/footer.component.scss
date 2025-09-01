@@ -342,7 +342,8 @@
     padding: clamp(70px, 2.5rem + 9vw, 130px) 0 60px;
   }
   .container-footer {
-    gap: 30px;
+    gap: 80px;
+    justify-content: center;
   }
   .footer__grid {
     max-width: 1800px;
@@ -362,7 +363,7 @@
   }
   .footer__copyright,
   .author {
-    font-size: 17px;
+    font-size: 12px;
   }
   .footer__links {
     gap: 50px;
@@ -404,7 +405,8 @@
     padding: clamp(80px, 3rem + 9.5vw, 140px) 0 70px;
   }
   .container-footer {
-    gap: 35px;
+    gap: 80px;
+    justify-content: center;
   }
   .footer__grid {
     max-width: 2000px;
@@ -424,7 +426,7 @@
   }
   .footer__copyright,
   .author {
-    font-size: 18px;
+    font-size: 14px;
   }
   .footer__links {
     gap: 60px;
@@ -486,7 +488,7 @@
   }
   .footer__copyright,
   .author {
-    font-size: 20px;
+    font-size: 16px;
   }
   .footer__links {
     gap: 70px;
