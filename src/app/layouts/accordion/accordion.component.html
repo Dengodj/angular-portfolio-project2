@@ -1,0 +1,22 @@
+<div class="accordion" id="accordion">
+  <p class="accordion-description">{{ "accordion.description" | translate }}</p>
+  <div
+    class="accordion-item"
+    *ngFor="let item of 'accordion.items' | translate; let i = index"
+  >
+    <button
+      class="accordion-header"
+      (click)="toggleAccordion(i)"
+      [class.active]="activeIndex === i"
+    >
+      {{ item.title }}
+    </button>
+    <div
+      class="accordion-content"
+      [class.active]="activeIndex === i"
+      #accordionContent
+    >
+      <p>{{ item.content }}</p>
+    </div>
+  </div>
+</div>

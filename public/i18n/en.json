@@ -1,0 +1,263 @@
+{
+  "innovationTitle": "Innovation at Our Core",
+  "innovationText1": "GDStudio is shaping the future of audio with <strong>AI-powered plugins</strong>. Our team is developing innovative tools that streamline workflows, enhance sound design, and unlock new creative possibilities for artists and producers worldwide.",
+  "innovationText2": "From intelligent mixing algorithms to automated sound effect generation, our AI solutions are designed to empower creators. Combined with our expertise in <strong>Dolby Atmos</strong>, we’re leading the charge in redefining how audio is created and experienced.",
+  "innovationImageAlt": "Innovation illustration",
+  "nav.home": "Home",
+  "nav.about": "About Us",
+  "nav.contacts": "Contacts",
+  "nav.services": "Services",
+  "nav.form": "Form",
+  "header.english": "EN",
+  "header.russian": "RU",
+  "header.ukrainian": "UA",
+  "header.logo": "GDStudio",
+  "header.searchLabel": "Search",
+  "header.searchPlaceholder": "Search products...",
+  "header.searchButton": "Search",
+  "searchHint": "Enter a product name to search",
+  "header.toggleNav": "Toggle navigation",
+  "contacts.title": "Contact Us",
+  "contacts.infoTitle": "Get in Touch",
+  "contacts.emailLabel": "Email",
+  "contacts.email": "info@gdstudio.com",
+  "contacts.phoneLabel": "Phone",
+  "contacts.phone": "+1 (234) 567-890",
+  "contacts.addressLabel": "Address",
+  "contacts.address": "123 Audio Lane, Music City, USA",
+  "contacts.formTitle": "Send Us a Message",
+  "contacts.nameLabel": "Name",
+  "contacts.namePlaceholder": "Enter your name",
+  "contacts.emailPlaceholder": "Enter your email",
+  "contacts.messageLabel": "Message",
+  "contacts.messagePlaceholder": "Enter your message",
+  "contacts.submitButton": "Submit",
+  "main.title": "Welcome to GDStudio",
+  "main.description1": "GDStudio specializes in crafting innovative software solutions for music production and audio processing. Our team develops cutting-edge plugins designed to enhance sound quality and streamline creative workflows for musicians and producers.",
+  "main.description2": "With a focus on artificial intelligence, we integrate smart algorithms to empower audio tools with adaptive features, making music production more intuitive and efficient for professionals and enthusiasts alike.",
+  "main.exploreTitle": "Explore Our Audio & AI Innovations",
+  "main.exploreDescription1": "Discover our portfolio of audio plugins, from equalizers and compressors to AI-driven sound design tools, all available on our GitHub repository with open-source code and detailed documentation.",
+  "main.exploreDescription2": "Join our community to collaborate on projects, access tutorials on music production software, and stay updated on our latest advancements in AI-powered audio processing.",
+  "accordion": {
+    "description": "Explore our innovative audio tools designed for music producers and sound engineers. \nFrom advanced plugins to AI-driven solutions, GDStudio offers everything you need to elevate your audio production game.",
+    "items": [
+      {
+        "title": "Music Production Software",
+        "content": "Our music production tools are designed to simplify complex workflows, offering intuitive interfaces and powerful features for producers. From digital audio workstations to virtual instruments, GDStudio delivers solutions that inspire creativity."
+      },
+      {
+        "title": "Audio Processing Plugins",
+        "content": "Explore our range of plugins, including equalizers, compressors, and reverbs, optimized for professional audio processing. Each plugin is crafted to deliver high-quality sound with minimal CPU usage."
+      },
+      {
+        "title": "AI-Powered Audio Tools",
+        "content": "Leveraging artificial intelligence, our tools analyze audio in real-time to provide adaptive effects and intelligent automation. Perfect for sound design, mastering, and innovative music production techniques."
+      }
+    ]
+  },
+  "about": {
+    "section1": {
+      "text": "Where sound becomes art. At GDStudio, we transform audio into immersive experiences for films, games, music, and beyond. Join us on our journey to redefine the future of sound."
+    },
+    "section2": {
+      "title": "Who We Are",
+      "text1": "GDStudio is a premier recording studio at the forefront of audio innovation. Our team of <strong>industry-leading professionals</strong> brings decades of expertise in <strong>music production</strong>, <strong>mastering</strong>, <strong>post-production</strong>, and <strong>sound design</strong>. From chart-topping tracks to cinematic soundscapes, we craft audio that captivates and inspires.",
+      "text2": "With a passion for pushing boundaries, we’re not just a studio—we’re a hub for creativity and growth, serving global clients in <strong>films</strong>, <strong>TV shows</strong>, <strong>video games</strong>, and <strong>music</strong>. Our commitment to excellence drives us to lead the industry with cutting-edge technology and artistry."
+    },
+    "section3": {
+      "title": "What We Do",
+      "recording": {
+        "title": "Sound Recording & Mastering",
+        "text": "Capture pristine audio and refine it with expert mastering to achieve a professional, polished sound that stands out."
+      },
+      "production": {
+        "title": "Music Production",
+        "text": "From concept to final mix, we create original tracks tailored to your vision, blending creativity with technical precision."
+      },
+      "postProduction": {
+        "title": "Post-Production",
+        "text": "Expert audio editing, mixing, and mastering for films, TV shows, and multimedia, ensuring seamless integration with visuals."
+      },
+      "soundEffects": {
+        "title": "Sound Effects",
+        "text": "Custom sound design for films, TV, and video games, creating immersive effects that enhance storytelling and gameplay."
+      },
+      "djing": {
+        "title": "DJing & Mixes",
+        "text": "Our expert DJs craft high-energy, seamless mixes for events, broadcasts, and digital platforms that keep the vibe alive."
+      },
+      "gameSoundtracking": {
+        "title": "Video Game Soundtracking",
+        "text": "Dynamic, adaptive scores that immerse players in unforgettable game worlds, amplifying emotion and intensity."
+      }
+    },
+    "section4": {
+      "title": "Immersive Audio with Dolby Atmos",
+      "text": "Experience sound like never before. GDStudio harnesses <strong>Dolby Atmos</strong> to deliver breathtaking, three-dimensional audio for films, games, and music. Our spatial audio expertise creates soundscapes that envelop listeners, making every moment more immersive and impactful.",
+      "link": "Explore Our Atmos Projects"
+    },
+    "section5": {
+      "logo": "GDStudio",
+      "videoTitle": "GDStudio Demo Reel",
+      "text1": "Ready to create something extraordinary? Let GDStudio bring your audio vision to life.",
+      "text2": "To see how Dolby Atmos works, click to play video in this container!",
+      "text3": "Click on the button below!",
+      "buttonAlt": "Play/Pause video"
+    },
+    "section6": {
+      "title": "Innovation at Our Core",
+      "text1": "GDStudio is shaping the future of audio with <strong>AI-powered plugins</strong>. Our team is developing innovative tools that streamline workflows, enhance sound design, and unlock new creative possibilities for artists and producers worldwide.",
+      "text2": "From intelligent mixing algorithms to automated sound effect generation, our AI solutions are designed to empower creators. Combined with our expertise in <strong>Dolby Atmos</strong>, we’re leading the charge in redefining how audio is created and experienced.",
+      "imageAlt": "Innovation illustration"
+    },
+    "section7": {
+      "title": "Our Vision for Growth",
+      "text": "At GDStudio, we’re not just keeping up with the industry—we’re driving it forward. Our commitment to innovation, collaboration, and excellence fuels our growth as a global leader in audio production. We’re expanding our reach, forging partnerships with top creators, and continuously evolving to meet the demands of tomorrow’s media landscape.",
+      "link": "Join Our Journey"
+    }
+  },
+  "services": {
+    "recording": {
+      "title": "Recording",
+      "description": "Professional studio recording for vocals and instruments.",
+      "price": "Cost: $200 / €180"
+    },
+    "mastering": {
+      "title": "Mastering",
+      "description": "High-quality mastering to polish your tracks.",
+      "price": "Cost: $150 / €135"
+    },
+    "sound_effects": {
+      "title": "Sound Effects",
+      "description": "Custom sound effects for media and projects.",
+      "price": "Cost: $100 / €90"
+    },
+    "video_game_effects": {
+      "title": "Video Game Effects",
+      "description": "Immersive audio effects for video games.",
+      "price": "Cost: $120 / €110"
+    },
+    "all_inclusive": {
+      "title": "All-Inclusive",
+      "description": "Complete audio production: recording, mastering, and effects.",
+      "price": "Cost: $500 / €450"
+    },
+    "bonus": {
+      "title": "Bonus: DJ & Remixes",
+      "description": "DJ services and custom remix production.",
+      "price": "Cost: $300 / €270"
+    },
+    "email_marketing": {
+      "title": "Email Marketing",
+      "description": "We create targeted email campaigns to promote your music, including personalized newsletters, release announcements, and fan engagement strategies."
+    },
+    "partners": {
+      "title": "Our Partners",
+      "description": "We collaborate with top studios like SoundWave Studio, MixMaster Inc., and global companies such as Sony Music and Universal."
+    },
+    "branding": {
+      "title": "Branding",
+      "description": "Boost your presence with TV show appearances and concert tour organization to elevate your music career."
+    }
+  },
+  "registration": {
+    "title": "Create your account",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "submitButton": "Register",
+    "submitSuccess": "Registration successful! Welcome to GDStudio.",
+    "submitError": "Please fill out all fields correctly.",
+    "errors": {
+      "username": {
+        "required": "Username is required.",
+        "minlength": "Username must be at least 3 characters long.",
+        "taken": "This username is already taken."
+      },
+      "phone": {
+        "required": "Phone number is required.",
+        "minlength": "Phone number must be at least 10 characters long."
+      },
+      "email": {
+        "required": "Email is required.",
+        "invalid": "Please enter a valid email address."
+      },
+      "password": {
+        "required": "Password is required.",
+        "minlength": "Password must be at least 8 characters long.",
+        "pattern": "Password must contain letters and numbers."
+      },
+      "confirmPassword": {
+        "required": "Password confirmation is required.",
+        "mismatch": "Passwords do not match."
+      }
+    }
+  },
+  "pageNotFound": {
+    "title": "404 - Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist."
+  },
+  "search": {
+    "noResults": "No products found matching your search.",
+    "products": {
+      "recording": "Recording",
+      "arranging": "Arranging",
+      "mixing": "Mixing",
+      "mastering": "Mastering",
+      "soundEffects": "Sound Effects Packs",
+      "dolbyAtmos": "Dolby Atmos Products",
+      "remixes": "Remixes",
+      "djServices": "DJ Services",
+      "promotion": "Promotion",
+      "musicProduction": "Music Production",
+      "postProduction": "Post-Production",
+      "soundDesign": "Sound Design",
+      "voiceover": "Voiceover",
+      "audioAdvertising": "Audio Advertising",
+      "soundtracks": "Soundtracks"
+    }
+  },
+  "footer": {
+    "logo": "GDStudio",
+    "infoText": "Always only high-quality products at an affordable price...",
+    "servicesTitle": "Services",
+    "services": {
+      "emailMarketing": "Email Marketing",
+      "campaigns": "Campaigns",
+      "branding": "Branding"
+    },
+    "musicStudioTitle": "Music Studio",
+    "musicStudio": {
+      "recording": "Recording",
+      "mastering": "Mastering",
+      "soundFX": "Sound FX",
+      "gameFX": "Game FX",
+      "all": "All"
+    },
+    "weAreHereTitle": "We are here",
+    "weAreHere": {
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    },
+    "social": {
+      "github": "GitHub",
+      "mixcloud": "MixCloud",
+      "soundcloud": "SoundCloud"
+    },
+    "copyright": "© 2025 Denis Goida. All rights reserved.",
+    "author": "Project by Denis Goida",
+    "links": {
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy"
+    },
+    "backToTop": "Back to top"
+  }
+}

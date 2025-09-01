@@ -1,0 +1,27 @@
+<div class="search-container">
+  <label for="search-input" class="visually-hidden" translate
+    >header.searchLabel</label
+  >
+  <input
+    id="search-input"
+    type="text"
+    class="search-input"
+    [placeholder]="'header.searchPlaceholder' | translate"
+    autocomplete="off"
+    aria-describedby="search-hint"
+    [(ngModel)]="searchTerm"
+    (keydown.enter)="onSearch()"
+  />
+  <button
+    class="search-button"
+    [attr.aria-label]="'header.searchButton' | translate"
+    (click)="onSearch()"
+    [disabled]="!searchTerm"
+    translate
+  >
+    header.searchButton
+  </button>
+  <span id="search-hint" class="visually-hidden" translate
+    >header.searchHint</span
+  >
+</div>

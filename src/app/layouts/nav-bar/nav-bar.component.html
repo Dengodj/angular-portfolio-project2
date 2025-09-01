@@ -1,0 +1,59 @@
+<nav id="navigation" [class.active]="isNavActive">
+  <div class="nav-links">
+    <a
+      class="button"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      [attr.aria-label]="'nav.home' | translate"
+      (click)="onLinkClick()"
+      translate
+    >
+      nav.home
+    </a>
+    <a
+      class="button"
+      routerLink="/about"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      [attr.aria-label]="'nav.about' | translate"
+      (click)="onLinkClick()"
+      translate
+    >
+      nav.about
+    </a>
+    <a
+      class="button"
+      routerLink="/contacts"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      [attr.aria-label]="'nav.contacts' | translate"
+      (click)="onLinkClick()"
+      translate
+    >
+      nav.contacts
+    </a>
+    <a
+      class="button"
+      routerLink="/services"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      [attr.aria-label]="'nav.services' | translate"
+      (click)="onLinkClick()"
+      translate
+    >
+      nav.services
+    </a>
+    <a
+      class="button"
+      routerLink="/form"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      [attr.aria-label]="'nav.form' | translate"
+      (click)="onLinkClick()"
+      translate
+    >
+      nav.form
+    </a>
+  </div>
+</nav>

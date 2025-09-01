@@ -1,0 +1,398 @@
+@import "../../mixins/mixins.scss";
+
+.registration-container {
+  max-width: 1480px;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+.registration-section {
+  padding: 2rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reg_title {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.password-group {
+  position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.eye-icon {
+  font-size: 1.3rem;
+  color: var(--ui-gray);
+  line-height: 1;
+}
+
+.submit-button {
+  background: var(--color-primary);
+  color: var(--color-logo);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-start;
+
+  &:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+  }
+}
+
+.error-message {
+  color: var(--logo-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submit-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+
+  &.success {
+    color: var(--color-secondary);
+  }
+
+  &.error {
+    color: var(--logo-color);
+  }
+}
+
+.success-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.success-image {
+  max-width: 100%;
+  height: 200px;
+  width: 300px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Full HD (1920x1080) */
+@include full-hd {
+  .registration-container {
+    max-width: 1800px;
+  }
+  .registration-section {
+    max-width: 800px;
+  }
+  .reg_title {
+    font-size: 1.5rem;
+  }
+  .form-input {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+  .submit-button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+  .success-image {
+    width: 400px;
+    height: 267px;
+  }
+}
+
+/* 2K/QHD (2560x1440) */
+@include qhd {
+  .registration-container {
+    max-width: 2000px;
+  }
+  .registration-section {
+    max-width: 900px;
+  }
+  .reg_title {
+    font-size: 1.7rem;
+  }
+  .form-input {
+    font-size: 1.3rem;
+    padding: 0.85rem;
+  }
+  .submit-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+  }
+  .success-image {
+    width: 450px;
+    height: 300px;
+  }
+}
+
+/* 4K (3840x2160) */
+@include uhd-4k {
+  .registration-container {
+    max-width: 2400px;
+  }
+  .registration-section {
+    max-width: 1000px;
+  }
+  .reg_title {
+    font-size: 2rem;
+  }
+  .form-input {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  .submit-button {
+    font-size: 1.4rem;
+    padding: 1.3rem 3rem;
+  }
+  .success-image {
+    width: 500px;
+    height: 333px;
+  }
+}
+
+/* 5K (5120x2880) */
+@include uhd-5k {
+  .registration-container {
+    max-width: 3000px;
+  }
+  .registration-section {
+    max-width: 1100px;
+  }
+  .reg_title {
+    font-size: 2.2rem;
+  }
+  .form-input {
+    font-size: 1.5rem;
+    padding: 1.1rem;
+  }
+  .submit-button {
+    font-size: 1.5rem;
+    padding: 1.5rem 3.5rem;
+  }
+  .success-image {
+    width: 550px;
+    height: 367px;
+  }
+}
+
+/* Apple MacBook Retina (2560x1600, 2880x1800) */
+@include macbook-retina {
+  .registration-container {
+    max-width: 2200px;
+  }
+  .registration-section {
+    max-width: 900px;
+  }
+  .reg_title {
+    font-size: 1.7rem;
+  }
+  .form-input {
+    font-size: 1.3rem;
+    padding: 0.85rem;
+  }
+  .submit-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+  }
+  .success-image {
+    width: 450px;
+    height: 300px;
+  }
+}
+
+/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
+@include imac-retina {
+  .registration-container {
+    max-width: 3000px;
+  }
+  .registration-section {
+    max-width: 1100px;
+  }
+  .reg_title {
+    font-size: 2.2rem;
+  }
+  .form-input {
+    font-size: 1.5rem;
+    padding: 1.1rem;
+  }
+  .submit-button {
+    font-size: 1.5rem;
+    padding: 1.5rem 3.5rem;
+  }
+  .success-image {
+    width: 550px;
+    height: 367px;
+  }
+}
+
+/* Tablets (768px–1024px) */
+@include tablet {
+  .registration-container {
+    max-width: 740px;
+    padding: 15px;
+  }
+  .registration-section {
+    max-width: 600px;
+    padding: 1.5rem 0;
+  }
+  .reg_title {
+    font-size: 1.2rem;
+  }
+  .form-input {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+  .submit-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+  }
+  .success-image {
+    width: 300px;
+    height: 200px;
+  }
+  .eye-icon {
+    font-size: 1.2rem;
+  }
+  .error-message,
+  .submit-message {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large smartphones (576px–767px) */
+@include mobile-large {
+  .registration-container {
+    max-width: 540px;
+    padding: 10px;
+  }
+  .registration-section {
+    max-width: 100%;
+    padding: 1.2rem 0;
+  }
+  .reg_title {
+    font-size: 1.1rem;
+  }
+  .form-input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    width: 100%;
+  }
+  .success-image {
+    width: 250px;
+    height: 167px;
+  }
+  .eye-icon {
+    font-size: 1.1rem;
+  }
+  .error-message,
+  .submit-message {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small smartphones (≤575px) */
+@include mobile-small {
+  .registration-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .registration-section {
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+  .reg_title {
+    font-size: 1rem;
+  }
+  .form-input {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+  .submit-button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+  }
+  .success-image {
+    max-width: 80%;
+    width: 200px;
+    height: 133px;
+  }
+  .eye-icon {
+    font-size: 1rem;
+  }
+  .error-message,
+  .submit-message {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 600px) {
+  .registration-section {
+    padding: 1rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .success-image {
+    max-width: 80%;
+  }
+}

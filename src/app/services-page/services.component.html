@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<div class="container">
+  <main class="services">
+    <section class="service-row" *ngIf="!searchTerm || isRecordingMatch">
+      <div class="service-card">
+        <h2>{{ "services.recording.title" | translate }}</h2>
+        <p>{{ "services.recording.description" | translate }}</p>
+        <p class="price">{{ "services.recording.price" | translate }}</p>
+        <ul class="package-list">
+          <li class="package-item" *ngFor="let pkg of packages"></li>
+        </ul>
+        <div class="service-image-container">
+          <img
+            [src]="images[0].src"
+            [alt]="images[0].alt | translate"
+            class="service-image"
+          />
+        </div>
+      </div>
+
+      <div class="service-card" *ngIf="!searchTerm">
+        <h2>{{ "services.mastering.title" | translate }}</h2>
+        <p>{{ "services.mastering.description" | translate }}</p>
+        <p class="price">{{ "services.mastering.price" | translate }}</p>
+        <div class="service-image-container">
+          <img
+            [src]="images[1].src"
+            [alt]="images[1].alt | translate"
+            class="service-image"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="service-row" *ngIf="!searchTerm">
+      <div class="service-card">
+        <h2>{{ "services.sound_effects.title" | translate }}</h2>
+        <p>{{ "services.sound_effects.description" | translate }}</p>
+        <p class="price">{{ "services.sound_effects.price" | translate }}</p>
+        <div class="service-image-container">
+          <img
+            [src]="images[2].src"
+            [alt]="images[2].alt | translate"
+            class="service-image"
+          />
+        </div>
+      </div>
+      <div class="service-card">
+        <h2>{{ "services.video_game_effects.title" | translate }}</h2>
+        <p>{{ "services.video_game_effects.description" | translate }}</p>
+        <p class="price">
+          {{ "services.video_game_effects.price" | translate }}
+        </p>
+        <div class="service-image-container">
+          <img
+            [src]="images[3].src"
+            [alt]="images[3].alt | translate"
+            class="service-image"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="service-card full-width" *ngIf="!searchTerm">
+      <h2 class="all_inclusive">
+        {{ "services.all_inclusive.title" | translate }}
+      </h2>
+      <p>{{ "services.all_inclusive.description" | translate }}</p>
+      <p class="price">{{ "services.all_inclusive.price" | translate }}</p>
+    </section>
+    <section class="service-card full-width" *ngIf="!searchTerm">
+      <h2>{{ "services.bonus.title" | translate }}</h2>
+      <p>{{ "services.bonus.description" | translate }}</p>
+      <p class="price">{{ "services.bonus.price" | translate }}</p>
+    </section>
+    <section class="info-section" *ngIf="!searchTerm">
+      <h2 class="info-title">
+        {{ "services.email_marketing.title" | translate }}
+      </h2>
+      <p class="info-description">
+        {{ "services.email_marketing.description" | translate }}
+      </p>
+    </section>
+    <section class="info-section" *ngIf="!searchTerm">
+      <h2 class="info-title">{{ "services.partners.title" | translate }}</h2>
+      <p class="info-description">
+        {{ "services.partners.description" | translate }}
+      </p>
+    </section>
+    <section class="info-section" *ngIf="!searchTerm">
+      <h2 class="info-title">{{ "services.branding.title" | translate }}</h2>
+      <p class="info-description">
+        {{ "services.branding.description" | translate }}
+      </p>
+    </section>
+  </main>
+</div>
+
+<app-footer></app-footer>

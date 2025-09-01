@@ -1,0 +1,288 @@
+@import "../../../mixins/mixins.scss";
+
+.accordion {
+  max-width: 1680px;
+  margin: 0 auto;
+
+  @include mobile() {
+    max-width: 92%;
+    padding: 0 20px;
+
+    .accordion-description {
+      margin-left: 2px;
+      text-align: left;
+      font-size: 0.85em;
+    }
+  }
+}
+
+.accordion {
+  background-color: #e6e6d95e;
+  padding-top: 20px;
+}
+
+.accordion-description {
+  margin-top: 4px;
+  margin-left: 14px;
+  color: var(--text-color);
+  font-size: 1.15em;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-primary);
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  background-color: #151b2bb2;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--color-logo);
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #353333b4;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  background-color: #e6e6d95e;
+}
+
+.accordion-content.active {
+  max-height: var(--content-height);
+  padding: 15px;
+}
+
+.accordion-header::after {
+  content: "\25BC"; /* Down arrow (Unicode) */
+  font-size: 0.8rem;
+}
+
+.accordion-header.active::after {
+  content: "\25B2";
+}
+
+.accordion-content p {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-size: 0.85em;
+}
+
+/* Full HD (1920x1080) */
+@include full-hd {
+  .accordion {
+    padding-top: 25px;
+  }
+  .accordion-description {
+    font-size: 1.3em;
+    margin-left: 18px;
+  }
+  .accordion-header {
+    font-size: 1rem;
+    padding: 18px;
+  }
+  .accordion-header::after {
+    font-size: 1rem;
+  }
+  .accordion-content p {
+    font-size: 1rem;
+  }
+}
+
+/* 2K/QHD (2560x1440) */
+@include qhd {
+  .accordion {
+    max-width: 2000px;
+    padding-top: 30px;
+  }
+  .accordion-description {
+    font-size: 1.4em;
+    margin-left: 20px;
+  }
+  .accordion-header {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+  .accordion-header::after {
+    font-size: 1.1rem;
+  }
+  .accordion-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* 4K (3840x2160) */
+@include uhd-4k {
+  .accordion {
+    max-width: 2400px;
+    padding-top: 35px;
+  }
+  .accordion-description {
+    font-size: 1.5em;
+    margin-left: 22px;
+  }
+  .accordion-header {
+    font-size: 1.2rem;
+    padding: 22px;
+  }
+  .accordion-header::after {
+    font-size: 1.2rem;
+  }
+  .accordion-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* 5K (5120x2880) */
+@include uhd-5k {
+  .accordion {
+    max-width: 3000px;
+    padding-top: 40px;
+  }
+  .accordion-description {
+    font-size: 1.6em;
+    margin-left: 24px;
+  }
+  .accordion-header {
+    font-size: 1.3rem;
+    padding: 24px;
+  }
+  .accordion-header::after {
+    font-size: 1.3rem;
+  }
+  .accordion-content p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Apple MacBook Retina (2560x1600, 2880x1800) */
+@include macbook-retina {
+  .accordion {
+    max-width: 2200px;
+    padding-top: 30px;
+  }
+  .accordion-description {
+    font-size: 1.4em;
+    margin-left: 20px;
+  }
+  .accordion-header {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+  .accordion-header::after {
+    font-size: 1.1rem;
+  }
+  .accordion-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
+@include imac-retina {
+  .accordion {
+    max-width: 3000px;
+    padding-top: 40px;
+  }
+  .accordion-description {
+    font-size: 1.6em;
+    margin-left: 24px;
+  }
+  .accordion-header {
+    font-size: 1.3rem;
+    padding: 24px;
+  }
+  .accordion-header::after {
+    font-size: 1.3rem;
+  }
+  .accordion-content p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets (768px–1024px) */
+@include tablet {
+  .accordion {
+    max-width: 740px;
+    padding: 0 15px;
+    padding-top: 15px;
+  }
+  .accordion-description {
+    font-size: 1em;
+    margin-left: 10px;
+  }
+  .accordion-header {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  .accordion-header::after {
+    font-size: 0.9rem;
+  }
+  .accordion-content p {
+    font-size: 0.9rem;
+    padding-bottom: 12px;
+  }
+}
+
+/* Large smartphones (576px–767px) */
+@include mobile-large {
+  .accordion {
+    max-width: 540px;
+    padding: 0 12px;
+    padding-top: 12px;
+  }
+  .accordion-description {
+    font-size: 0.9em;
+    margin-left: 8px;
+  }
+  .accordion-header {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+  .accordion-header::after {
+    font-size: 0.85rem;
+  }
+  .accordion-content p {
+    font-size: 0.85rem;
+    padding-bottom: 10px;
+  }
+}
+
+/* Small smartphones (≤575px) */
+@include mobile-small {
+  .accordion {
+    max-width: 100%;
+    padding: 0 10px;
+    padding-top: 10px;
+  }
+  .accordion-description {
+    font-size: 0.85em;
+    margin-left: 5px;
+    text-align: left;
+  }
+  .accordion-header {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  .accordion-header::after {
+    font-size: 0.8rem;
+  }
+  .accordion-content p {
+    font-size: 0.8rem;
+    padding-bottom: 8px;
+  }
+}

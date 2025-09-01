@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./mixins/mixins.scss";
+$font-path: "/fonts";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  font-family: var(--font-family-sans-serif);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  padding: 0.2em 0.5em;
+  color: var(--color-background);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  /* 	padding: 30px; */
+  flex: 1 1 auto;
+  background-color: var(--color-logo);
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+/* Full HD (1920x1080) */
+@include full-hd() {
+  .container {
+    max-width: 1800px;
+  }
+}
+
+/* 2K/QHD (2560x1440) */
+@include qhd() {
+  .container {
+    max-width: 2000px;
+  }
+}
+
+/* 4K (3840x2160) */
+@include uhd-4k() {
+  .container {
+    max-width: 2400px;
+  }
+}
+
+/* 5K (5120x2880) */
+@include uhd-5k() {
+  .container {
+    max-width: 3000px;
+  }
+}
+
+/* Apple MacBook Retina (2560x1600, 2880x1800) */
+@include macbook-retina() {
+  .container {
+    max-width: 2200px;
+  }
+}
+
+/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
+@include imac-retina() {
+  .container {
+    max-width: 3000px;
+  }
+}
+
+/* Tablets (768px–1024px) */
+@include tablet() {
+  .container {
+    max-width: 740px;
+  }
+}
+
+/* Large smartphones (576px–767px) */
+@include mobile-large() {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Small smartphones  (≤575px) */
+@include mobile-small() {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@include desktop() {
+  .container {
+    max-width: 1720px;
+  }
+}
+
+@include desktop-small() {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@include mobile-xl() {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@include mobile() {
+  .container {
+    max-width: 540px;
+  }
+}

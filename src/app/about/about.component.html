@@ -1,0 +1,160 @@
+<app-header></app-header>
+
+<main class="main-page_about">
+  <div class="container">
+    <div class="main-container_about">
+      <section class="section-about1">
+        <div class="content-about">
+          <p class="text-about_page1" translate>about.section1.text</p>
+        </div>
+      </section>
+
+      <section class="section-about2">
+        <h2 class="text-center_about2" translate>about.section2.title</h2>
+        <div class="grid-about_page">
+          <div>
+            <p
+              class="text-about_page2"
+              [innerHTML]="'about.section2.text1' | translate"
+            ></p>
+            <p
+              class="text-about_page2"
+              [innerHTML]="'about.section2.text2' | translate"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-about3">
+        <h2 class="text-center_about3" translate>about.section3.title</h2>
+        <div class="grid-about_page">
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.recording.title
+            </h3>
+            <p class="text-about_page3" translate>
+              about.section3.recording.text
+            </p>
+          </div>
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.production.title
+            </h3>
+            <p class="text-about_page3" translate>
+              about.section3.production.text
+            </p>
+          </div>
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.postProduction.title
+            </h3>
+            <p class="text-about_page3" translate>
+              about.section3.postProduction.text
+            </p>
+          </div>
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.soundEffects.title
+            </h3>
+            <p class="text-about_page3" translate>
+              about.section3.soundEffects.text
+            </p>
+          </div>
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.djing.title
+            </h3>
+            <p class="text-about_page3" translate>about.section3.djing.text</p>
+          </div>
+          <div>
+            <h3 class="subtitle-about3" translate>
+              about.section3.gameSoundtracking.title
+            </h3>
+            <p class="text-about_page3" translate>
+              about.section3.gameSoundtracking.text
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-about4">
+        <h2 class="text-center_about4" translate>about.section4.title</h2>
+        <p
+          class="text-about_page4"
+          [innerHTML]="'about.section4.text' | translate"
+        ></p>
+        <a href="/services" class="explore-atmos" translate
+          >about.section4.link</a
+        >
+      </section>
+
+      <section class="section-video">
+        <div class="video-content-wrapper">
+          <div class="container-video">
+            <p class="video-logo" translate>about.section5.logo</p>
+            <div class="video-box">
+              <video
+                #demoVideo
+                width="350"
+                height="245"
+                controls
+                muted
+                loop
+                playsinline
+                [title]="'about.section5.videoTitle' | translate"
+              >
+                <source src="/video/Dolby Atmos.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div class="video-info-wrapper">
+            <p class="video-infotext" translate>about.section5.text1</p>
+            <p class="video-infotext" translate>about.section5.text2</p>
+            <p class="video-infotext" translate>about.section5.text3</p>
+            <button class="play-arrow" (click)="playVideo()">
+              <img
+                src="/img/icons8-left-arrow-50.png"
+                [alt]="'about.section5.buttonAlt' | translate"
+                width="34"
+                height="34"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-about5">
+        <h2 class="text-center_about5" translate>about.section6.title</h2>
+        <div class="grid-section5">
+          <div class="text-box">
+            <p
+              class="text-about_page5"
+              [innerHTML]="'about.section6.text1' | translate"
+            ></p>
+          </div>
+          <div class="image-box">
+            <img
+              class="image-innovation"
+              src="/img/DHCinema.webp"
+              [alt]="'about.section6.imageAlt' | translate"
+            />
+          </div>
+          <div class="text-box">
+            <p
+              class="text-about_page5"
+              [innerHTML]="'about.section6.text2' | translate"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-about6">
+        <h2 class="text-center_about6" translate>about.section7.title</h2>
+        <p class="text-about_page6" translate>about.section7.text</p>
+        <a href="/contacts" class="join-our" translate>about.section7.link</a>
+      </section>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,255 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="registration-container">
+    <div class="registration-section">
+      <div *ngIf="!isSubmitted">
+        <h1 translate class="reg_title">registration.title</h1>
+        <form
+          [formGroup]="registrationForm"
+          (ngSubmit)="onSubmit()"
+          class="registration-form"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="username" class="visually-hidden" translate
+              >registration.usernameLabel</label
+            >
+            <input
+              id="username"
+              type="text"
+              formControlName="username"
+              [placeholder]="'registration.usernamePlaceholder' | translate"
+              [attr.aria-invalid]="
+                username?.invalid && (username?.dirty || username?.touched)
+              "
+              [attr.aria-describedby]="
+                username?.invalid && (username?.dirty || username?.touched)
+                  ? 'username-error'
+                  : null
+              "
+              class="form-input"
+              (input)="onInputChange('username', $event)"
+            />
+            <div
+              *ngIf="
+                username?.invalid && (username?.dirty || username?.touched)
+              "
+              id="username-error"
+              class="error-message"
+              translate
+            >
+              <ng-container *ngIf="username?.errors?.['required']"
+                >registration.errors.username.required</ng-container
+              >
+              <ng-container *ngIf="username?.errors?.['minlength']"
+                >registration.errors.username.minlength</ng-container
+              >
+              <ng-container *ngIf="username?.errors?.['usernameTaken']"
+                >registration.errors.username.taken</ng-container
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="visually-hidden" translate
+              >registration.phoneLabel</label
+            >
+            <input
+              id="phone"
+              type="tel"
+              formControlName="phone"
+              [placeholder]="'registration.phonePlaceholder' | translate"
+              [attr.aria-invalid]="
+                phone?.invalid && (phone?.dirty || phone?.touched)
+              "
+              [attr.aria-describedby]="
+                phone?.invalid && (phone?.dirty || phone?.touched)
+                  ? 'phone-error'
+                  : null
+              "
+              class="form-input"
+              (input)="onInputChange('phone', $event)"
+            />
+            <div
+              *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)"
+              id="phone-error"
+              class="error-message"
+              translate
+            >
+              {{ phone?.errors?.['required'] ? 'registration.errors.phone.required' : 'registration.errors.phone.minlength' }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="visually-hidden" translate
+              >registration.emailLabel</label
+            >
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              [placeholder]="'registration.emailPlaceholder' | translate"
+              [attr.aria-invalid]="
+                email?.invalid && (email?.dirty || email?.touched)
+              "
+              [attr.aria-describedby]="
+                email?.invalid && (email?.dirty || email?.touched)
+                  ? 'email-error'
+                  : null
+              "
+              class="form-input"
+              (input)="onInputChange('email', $event)"
+            />
+            <div
+              *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+              id="email-error"
+              class="error-message"
+              translate
+            >
+              {{ email?.errors?.['required'] ? 'registration.errors.email.required' : 'registration.errors.email.invalid' }}
+            </div>
+          </div>
+
+          <div class="form-group password-group">
+            <label for="password" class="visually-hidden" translate
+              >registration.passwordLabel</label
+            >
+            <div class="input-wrapper">
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                formControlName="password"
+                [placeholder]="'registration.passwordPlaceholder' | translate"
+                [attr.aria-invalid]="
+                  password?.invalid && (password?.dirty || password?.touched)
+                "
+                [attr.aria-describedby]="
+                  password?.invalid && (password?.dirty || password?.touched)
+                    ? 'password-error'
+                    : null
+                "
+                class="form-input"
+                (input)="onInputChange('password', $event)"
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                (click)="togglePasswordVisibility('password')"
+                [attr.aria-label]="
+                  showPassword
+                    ? 'header.hidePassword'
+                    : ('header.showPassword' | translate)
+                "
+              >
+                <span class="eye-icon">{{ showPassword ? "👁️" : "👁️‍🗨️" }}</span>
+              </button>
+            </div>
+            <div
+              *ngIf="
+                password?.invalid && (password?.dirty || password?.touched)
+              "
+              id="password-error"
+              class="error-message"
+              translate
+            >
+              {{
+              password?.errors?.['required']
+                ? 'registration.errors.password.required'
+                : password?.errors?.['minlength']
+                ? 'registration.errors.password.minlength'
+                : 'registration.errors.password.pattern'
+              }}
+            </div>
+          </div>
+
+          <div class="form-group password-group">
+            <label for="confirmPassword" class="visually-hidden" translate
+              >registration.confirmPasswordLabel</label
+            >
+            <div class="input-wrapper">
+              <input
+                id="confirmPassword"
+                [type]="showConfirmPassword ? 'text' : 'password'"
+                formControlName="confirmPassword"
+                [placeholder]="
+                  'registration.confirmPasswordPlaceholder' | translate
+                "
+                [attr.aria-invalid]="
+                  confirmPassword?.invalid &&
+                  (confirmPassword?.dirty || confirmPassword?.touched)
+                "
+                [attr.aria-describedby]="
+                  confirmPassword?.invalid &&
+                  (confirmPassword?.dirty || confirmPassword?.touched)
+                    ? 'confirmPassword-error'
+                    : null
+                "
+                class="form-input"
+                (input)="onInputChange('confirmPassword', $event)"
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                (click)="togglePasswordVisibility('confirmPassword')"
+                [attr.aria-label]="
+                  showConfirmPassword
+                    ? 'header.hidePassword'
+                    : ('header.showPassword' | translate)
+                "
+              >
+                <span class="eye-icon">{{
+                  showConfirmPassword ? "👁️" : "👁️‍🗨️"
+                }}</span>
+              </button>
+            </div>
+            <div
+              *ngIf="
+                confirmPassword?.invalid &&
+                (confirmPassword?.dirty || confirmPassword?.touched)
+              "
+              id="confirmPassword-error"
+              class="error-message"
+              translate
+            >
+              {{
+              confirmPassword?.errors?.['required']
+                ? 'registration.errors.confirmPassword.required'
+                : 'registration.errors.confirmPassword.mismatch'
+              }}
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-button"
+            [disabled]="registrationForm.invalid || registrationForm.pending"
+            [attr.aria-label]="'registration.submitButton' | translate"
+            translate
+          >
+            registration.submitButton
+          </button>
+
+          <div
+            *ngIf="submitMessage && !isSubmitted"
+            class="submit-message error"
+            translate
+          >
+            {{ submitMessage }}
+          </div>
+        </form>
+      </div>
+
+      <div *ngIf="isSubmitted" class="success-section">
+        <div class="submit-message success" translate>{{ submitMessage }}</div>
+        <img
+          src="/img/faders.webp"
+          alt="Welcome to GDStudio"
+          class="success-image"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,136 @@
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #2ecc71;
+  --color-accent: #e74c3c;
+  --color-background: #ecf0f1;
+  --color-text: #2c3e50;
+  --footer-text-color: #000000;
+  --footer-link-color: #ffff99;
+  --color-logo: #ffffff;
+  --text-color: #1e1e1e;
+  --text-color2: #000000;
+  --text-muted: #8d8d8d;
+  --text-card-dark-blue: #0d1b39;
+  --accent: #e58411;
+  --floral-white: #fffaf0;
+  --title-color1: #cd3333;
+  --title-color2: #87421f;
+  --more: #8806ce;
+
+  --header-text-color: #ffffff;
+  --logo-color: #8b2323;
+
+  --footer-accent: #f6973f;
+  --footer-bg: #2d2f33;
+
+  --ui-gray: #7c7c7c;
+  --ui-dark-blue: #0d1b39;
+  --ui-turquoise: #00d6c9;
+  --background-fon: #f0f8ff;
+
+  --font-main: "Gilroy", sans-serif;
+  --font-cards: "Inter", sans-serif;
+  --font-footer-accent: "DM Sans", sans-serif;
+
+  --font-family-sans-serif: "Gilroy", sans-serif;
+  --font-family-serif: "Gilroy", serif;
+}
+
+@mixin retina-bg($image) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: $image;
+  }
+}
+
+/* Full HD (1920x1080) */
+@mixin full-hd() {
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    @content;
+  }
+}
+
+/* 2K/QHD (2560x1440) */
+@mixin qhd() {
+  @media (min-width: 2560px) and (max-width: 3839px) {
+    @content;
+  }
+}
+
+/* 4K (3840x2160) */
+@mixin uhd-4k() {
+  @media (min-width: 3840px) and (max-width: 5119px) {
+    @content;
+  }
+}
+
+/* 5K (5120x2880) */
+@mixin uhd-5k() {
+  @media (min-width: 5120px) {
+    @content;
+  }
+}
+
+/* Apple MacBook Retina (2560x1600, 2880x1800) */
+@mixin macbook-retina() {
+  @media (min-width: 2560px) and (max-width: 2880px) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
+@mixin imac-retina() {
+  @media (min-width: 4480px) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/* (iPad, iPad Pro, 768px–1024px) */
+@mixin tablet() {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/* (iPhone 14 Pro Max, 576px–767px) */
+@mixin mobile-large() {
+  @media (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+/* (iPhone SE, 320px–575px) */
+@mixin mobile-small() {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-small() {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mobile-xl() {
+  @media (max-width: 819px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 629px) {
+    @content;
+  }
+}

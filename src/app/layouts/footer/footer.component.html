@@ -1,0 +1,134 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__desc" [ngStyle]="backgroundStyle">
+        <div class="footer__logo">
+          <p class="footer-logo_text" translate>footer.logo</p>
+        </div>
+        <p class="footer-infotext" translate>footer.infoText</p>
+      </div>
+
+      <nav class="footer__nav footer__nav--services">
+        <h3 class="footer__nav-title" translate>footer.servicesTitle</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#!" translate>footer.services.emailMarketing</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#!" translate>footer.services.campaigns</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#!" translate>footer.services.branding</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav__nav--music">
+        <h3 class="footer__nav-title" translate>footer.musicStudioTitle</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="/services" translate>footer.musicStudio.recording</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="/services" translate>footer.musicStudio.mastering</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="/services" translate>footer.musicStudio.soundFX</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="/services" translate>footer.musicStudio.gameFX</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="/about" translate>footer.musicStudio.all</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav__nav--we">
+        <h3 class="footer__nav-title" translate>footer.weAreHereTitle</h3>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a
+              href="https://www.youtube.com/channel/UCLf1muwoNyQdviQcg2YjzpQ"
+              target="_blank"
+              translate
+            >
+              footer.weAreHere.youtube
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://www.instagram.com/p/DG8Zx8ZCfSH/" translate>
+              footer.weAreHere.instagram
+            </a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://www.facebook.com/reel/985567476855181" translate>
+              footer.weAreHere.facebook
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="top">
+        <div class="dot-container">
+          <a
+            (click)="scrollToTop()"
+            (keydown.enter)="scrollToTop()"
+            (keydown.space)="scrollToTop()"
+            tabindex="0"
+            role="button"
+            class="info-dot info-dot--animated"
+            [attr.aria-label]="'footer.backToTop' | translate"
+          >
+            <span class="info-dot__circle"></span>
+            <span class="info-dot__ring info-dot__ring--outer"></span>
+            <span class="info-dot__ring info-dot__ring--middle"></span>
+            <span class="info-dot__ring info-dot__ring--inner"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-footer">
+      <a class="github-link" href="https://github.com/Dengodj" translate>
+        footer.social.github
+        <img src="../img/github2.png" alt="GitHub Icon" class="github-icon" />
+      </a>
+      <a
+        class="mixcloud-link"
+        href="https://www.mixcloud.com/genres/power-of-relax/"
+        translate
+      >
+        footer.social.mixcloud
+        <img
+          src="../img/mixcloud.png"
+          alt="MixCloud Icon"
+          class="mixcloud-icon"
+        />
+      </a>
+      <a
+        class="soundcloud-link"
+        href="https://soundcloud.com/denis-gojda-910152141"
+        translate
+      >
+        footer.social.soundcloud
+        <img
+          src="../img/soundcloud2.png"
+          alt="SoundCloud Icon"
+          class="soundcloud-icon"
+        />
+      </a>
+    </div>
+
+    <div class="footer__row">
+      <div class="footer__copyright">
+        <p class="footer-text" translate>footer.copyright</p>
+      </div>
+      <div class="author" translate>footer.author</div>
+      <div class="footer__links">
+        <a href="#!" translate>footer.links.terms</a>
+        <a href="#!" translate>footer.links.privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>

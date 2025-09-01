@@ -1,0 +1,55 @@
+<header class="header" id="header" tabindex="0">
+  <div class="container">
+    <div class="container-header">
+      <div class="logo-container">
+        <img src="/img/favicon-32x32.png" alt="Logo" class="logo" />
+        <h3 class="logo-text" translate>header.logo</h3>
+      </div>
+      <app-search
+        *ngIf="!isSearchHidden"
+        (searchTermChange)="onSearch($event)"
+      ></app-search>
+      <button
+        id="hamburger-menu"
+        class="hamburger"
+        role="button"
+        [attr.aria-expanded]="isNavActive"
+        [attr.aria-label]="'header.toggleNav' | translate"
+        aria-controls="navigation"
+        (click)="toggleNav()"
+        [class.active]="isNavActive"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <app-nav-bar
+        [isNavActive]="isNavActive"
+        (linkClicked)="closeNav()"
+      ></app-nav-bar>
+      <div class="lang-switcher">
+        <button
+          [class.active]="currentLang === 'en'"
+          (click)="switchLanguage('en')"
+          translate
+        >
+          header.english
+        </button>
+        <button
+          [class.active]="currentLang === 'ru'"
+          (click)="switchLanguage('ru')"
+          translate
+        >
+          header.russian
+        </button>
+        <button
+          [class.active]="currentLang === 'uk'"
+          (click)="switchLanguage('uk')"
+          translate
+        >
+          header.ukrainian
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
