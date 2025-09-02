@@ -66,9 +66,9 @@ img {
 }
 
 .main {
-  /* 	padding: 30px; */
   flex: 1 1 auto;
   background-color: var(--color-logo);
+  border: 1px solid transparent;
 }
 
 .container {
@@ -81,7 +81,7 @@ img {
 /* Full HD (1920x1080) */
 @include full-hd() {
   .container {
-    max-width: 1800px;
+    max-width: 1760px;
   }
 }
 
@@ -89,34 +89,48 @@ img {
 @include qhd() {
   .container {
     max-width: 2000px;
+    padding: 0 30px;
+    gap: 50px;
   }
 }
 
 /* 4K (3840x2160) */
 @include uhd-4k() {
   .container {
-    max-width: 2400px;
+    width: 90%;
+    max-width: 2200px;
+    padding: 0 40px;
+    gap: 60px;
   }
 }
 
 /* 5K (5120x2880) */
 @include uhd-5k() {
   .container {
-    max-width: 3000px;
+    width: 90%;
+    max-width: 2400px;
+    padding: 0 50px;
+    gap: 70px;
   }
 }
 
 /* Apple MacBook Retina (2560x1600, 2880x1800) */
 @include macbook-retina() {
   .container {
-    max-width: 2200px;
+    width: 90%;
+    max-width: 1800px;
+    padding: 0 30px;
+    gap: 50px;
   }
 }
 
 /* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
 @include imac-retina() {
   .container {
-    max-width: 3000px;
+    width: 90%;
+    max-width: 2400px;
+    padding: 0 50px;
+    gap: 70px;
   }
 }
 
@@ -124,6 +138,8 @@ img {
 @include tablet() {
   .container {
     max-width: 740px;
+    padding: 0 15px;
+    gap: 30px;
   }
 }
 
@@ -131,6 +147,8 @@ img {
 @include mobile-large() {
   .container {
     max-width: 540px;
+    padding: 0 12px;
+    gap: 20px;
   }
 }
 
@@ -139,18 +157,23 @@ img {
   .container {
     max-width: 100%;
     padding: 0 10px;
+    gap: 15px;
   }
 }
 
 @include desktop() {
   .container {
     max-width: 1720px;
+    padding: 0 20px;
+    gap: 40px;
   }
 }
 
 @include desktop-small() {
   .container {
     max-width: 1200px;
+    padding: 0 15px;
+    gap: 30px;
   }
 }
 
