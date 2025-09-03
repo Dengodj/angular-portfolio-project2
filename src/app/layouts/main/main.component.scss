@@ -14,6 +14,36 @@
   margin: 0 auto;
 
   @include retina-bg(url("/img/music-controller@2x.webp"));
+
+  @include qhd {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @include uhd-4k {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @include uhd-5k {
+    padding: 50px;
+    gap: 50px;
+  }
+
+  @include macbook-retina {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @include imac-retina {
+    padding: 50px;
+    gap: 50px;
+  }
+
+  @include tablet {
+    padding: 15px;
+    gap: 15px;
+  }
 }
 
 .main-page_home {
@@ -47,6 +77,31 @@
   padding: 20px;
   border: 1px solid #e4b378c9;
   background-color: rgba(22, 76, 152, 0.332);
+
+  @include qhd {
+    max-width: 1600px;
+    padding: 30px;
+  }
+
+  @include uhd-4k {
+    max-width: 2000px;
+    padding: 40px;
+  }
+
+  @include uhd-5k {
+    max-width: 2400px;
+    padding: 50px;
+  }
+
+  @include imac-retina {
+    max-width: 2400px;
+    padding: 50px;
+  }
+
+  @include tablet {
+    max-width: 740px;
+    padding: 15px;
+  }
 }
 
 .main-title {
@@ -57,130 +112,28 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
-  /* 2K/QHD (2560x1440) */
-@include qhd {
-    .main-container {
-      padding: 30px;
-      gap: 30px;
-    }
-    .content-block {
-      max-width: 1600px;
-      padding: 30px;
-    }
-    .main-title {
-      font-size: 2.5rem;
-    }
-    .main-description {
-      font-size: 2.1rem;
-    }
-    .block-title {
-      font-size: 1.8rem;
-    }
+  @include qhd {
+    font-size: 2.5rem;
   }
 
-  /* 4K (3840x2160) */
   @include uhd-4k {
-    .main-container {
-      padding: 40px;
-      gap: 40px;
-    }
-    .content-block {
-      max-width: 2000px;
-      padding: 40px;
-    }
-    .main-title {
-      font-size: 3rem;
-    }
-    .main-description {
-      font-size: 1.3rem;
-    }
-    .block-title {
-      font-size: 2rem;
-    }
+    font-size: 3rem;
   }
 
-  /* 5K (5120x2880) */
   @include uhd-5k {
-    .main-container {
-      padding: 50px;
-      gap: 50px;
-    }
-    .content-block {
-      max-width: 2400px;
-      padding: 50px;
-    }
-    .main-title {
-      font-size: 3.5rem;
-    }
-    .main-description {
-      font-size: 1.5rem;
-    }
-    .block-title {
-      font-size: 2.2rem;
-    }
+    font-size: 3.5rem;
   }
 
-  /* Apple MacBook Retina (2560x1600, 2880x1800) */
   @include macbook-retina {
-    .main-container {
-      padding: 30px;
-      gap: 30px;
-    }
-    .content-block {
-      max-width: 1600px;
-      padding: 30px;
-    }
-    .main-title {
-      font-size: 2.5rem;
-    }
-    .main-description {
-      font-size: 1.1rem;
-    }
-    .block-title {
-      font-size: 1.8rem;
-    }
+    font-size: 2.5rem;
   }
 
-  /* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
   @include imac-retina {
-    .main-container {
-      padding: 50px;
-      gap: 50px;
-    }
-    .content-block {
-      max-width: 2400px;
-      padding: 50px;
-    }
-    .main-title {
-      font-size: 3.5rem;
-    }
-    .main-description {
-      font-size: 1.5rem;
-    }
-    .block-title {
-      font-size: 2.2rem;
-    }
+    font-size: 3.5rem;
   }
 
-  /* Tablets (768px–1024px) */
   @include tablet {
-    .main-container {
-      padding: 15px;
-      gap: 15px;
-    }
-    .content-block {
-      max-width: 740px;
-      padding: 15px;
-    }
-    .main-title {
-      font-size: 1.7rem;
-    }
-    .main-description {
-      font-size: 0.8rem;
-    }
-    .block-title {
-      font-size: 1.3rem;
-    }
+    font-size: 1.7rem;
   }
 
   @include mobile() {
@@ -194,6 +147,30 @@
   line-height: 1.5;
   margin-top: 10px;
   text-align: left;
+
+  @include qhd {
+    font-size: 1.25rem;
+  }
+
+  @include uhd-4k {
+    font-size: 1.3rem;
+  }
+
+  @include uhd-5k {
+    font-size: 1.5rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.1rem;
+  }
+
+  @include imac-retina {
+    font-size: 1.5rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
 }
 
 .block-title {
@@ -201,6 +178,26 @@
   font-size: 1.5rem;
   color: var(--color-logo);
   margin-bottom: 10px;
+
+  @include qhd {
+    font-size: 1.8rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.2rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.8rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.2rem;
+  }
 
   @include mobile() {
     font-size: 1.2rem;
