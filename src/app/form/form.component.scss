@@ -4,12 +4,67 @@
   max-width: 1480px;
   margin: 0 auto;
   background-color: var(--color-background);
+
+  @include qhd {
+    max-width: 2000px;
+  }
+
+  @include uhd-4k {
+    max-width: 2400px;
+  }
+
+  @include uhd-5k {
+    max-width: 3000px;
+  }
+
+  @include imac-retina {
+    max-width: 3000px;
+  }
+
+  @include macbook-retina {
+    max-width: 2200px;
+  }
+
+  @include tablet {
+    max-width: 740px;
+    padding: 15px;
+  }
+
+  @include mobile {
+    max-width: 540px;
+    padding: 10px;
+  }
 }
 
 .registration-section {
   padding: 2rem 0;
   max-width: 600px;
   margin: 0 auto;
+
+  @include qhd {
+    max-width: 900px;
+  }
+
+  @include uhd-4k {
+    max-width: 1000px;
+  }
+
+  @include uhd-5k {
+    max-width: 1100px;
+  }
+
+  @include macbook-retina {
+    max-width: 900px;
+  }
+
+  @include imac-retina {
+    max-width: 1100px;
+  }
+
+  @include tablet {
+    max-width: 600px;
+    padding: 1.5rem 0;
+  }
 }
 
 .reg_title {
@@ -17,6 +72,30 @@
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   color: var(--color-primary);
+
+  @include qhd {
+    font-size: 1.7rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.2rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.7rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.2rem;
+  }
+
+  @include tablet {
+    font-size: 1.2rem;
+  }
 }
 
 .registration-form {
@@ -46,6 +125,36 @@
   border-radius: 4px;
   font-size: 1rem;
   width: 100%;
+
+  @include qhd {
+    font-size: 1.3rem;
+    padding: 0.85rem;
+  }
+
+  @include uhd-4k {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  @include uhd-5k {
+    font-size: 1.5rem;
+    padding: 1.1rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.3rem;
+    padding: 0.85rem;
+  }
+
+  @include imac-retina {
+    font-size: 1.5rem;
+    padding: 1.1rem;
+  }
+
+  @include tablet {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
 }
 
 .toggle-password {
@@ -65,6 +174,10 @@
   font-size: 1.3rem;
   color: var(--ui-gray);
   line-height: 1;
+
+  @include tablet {
+    font-size: 1.2rem;
+  }
 }
 
 .submit-button {
@@ -81,12 +194,47 @@
     background: var(--text-muted);
     cursor: not-allowed;
   }
+
+  @include qhd {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+  }
+
+  @include uhd-4k {
+    font-size: 1.4rem;
+    padding: 1.3rem 3rem;
+  }
+
+  @include uhd-5k {
+    font-size: 1.5rem;
+    padding: 1.5rem 3.5rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+  }
+
+  @include imac-retina {
+    font-size: 1.5rem;
+    padding: 1.5rem 3.5rem;
+  }
+
+  @include tablet {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+  }
 }
 
 .error-message {
   color: var(--logo-color);
   font-size: 0.875rem;
   margin-top: 0.25rem;
+
+  @include tablet {
+    font-size: 0.85rem;
+  }
 }
 
 .submit-message {
@@ -99,6 +247,10 @@
 
   &.error {
     color: var(--logo-color);
+  }
+
+  @include tablet {
+    font-size: 0.85rem;
   }
 }
 
@@ -115,6 +267,36 @@
   height: 200px;
   width: 300px;
   border-radius: 4px;
+
+  @include qhd {
+    height: 300px;
+    width: 450px;
+  }
+
+  @include uhd-4k {
+    height: 333px;
+    width: 500px;
+  }
+
+  @include uhd-5k {
+    height: 367px;
+    width: 550px;
+  }
+
+  @include macbook-retina {
+    height: 300px;
+    width: 450px;
+  }
+
+  @include imac-retina {
+    height: 367px;
+    width: 550px;
+  }
+
+  @include tablet {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 .visually-hidden {
@@ -128,271 +310,10 @@
   border: 0;
 }
 
-/* Full HD (1920x1080) */
-@include full-hd {
-  .registration-container {
-    max-width: 1800px;
-  }
-  .registration-section {
-    max-width: 800px;
-  }
-  .reg_title {
-    font-size: 1.5rem;
-  }
-  .form-input {
-    font-size: 1.2rem;
-    padding: 0.75rem;
-  }
-  .submit-button {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-  }
-  .success-image {
-    width: 400px;
-    height: 267px;
-  }
+.submit-button {
+  width: 100%;
 }
 
-/* 2K/QHD (2560x1440) */
-@include qhd {
-  .registration-container {
-    max-width: 2000px;
-  }
-  .registration-section {
-    max-width: 900px;
-  }
-  .reg_title {
-    font-size: 1.7rem;
-  }
-  .form-input {
-    font-size: 1.3rem;
-    padding: 0.85rem;
-  }
-  .submit-button {
-    font-size: 1.3rem;
-    padding: 1.2rem 2.5rem;
-  }
-  .success-image {
-    width: 450px;
-    height: 300px;
-  }
-}
-
-/* 4K (3840x2160) */
-@include uhd-4k {
-  .registration-container {
-    max-width: 2400px;
-  }
-  .registration-section {
-    max-width: 1000px;
-  }
-  .reg_title {
-    font-size: 2rem;
-  }
-  .form-input {
-    font-size: 1.4rem;
-    padding: 1rem;
-  }
-  .submit-button {
-    font-size: 1.4rem;
-    padding: 1.3rem 3rem;
-  }
-  .success-image {
-    width: 500px;
-    height: 333px;
-  }
-}
-
-/* 5K (5120x2880) */
-@include uhd-5k {
-  .registration-container {
-    max-width: 3000px;
-  }
-  .registration-section {
-    max-width: 1100px;
-  }
-  .reg_title {
-    font-size: 2.2rem;
-  }
-  .form-input {
-    font-size: 1.5rem;
-    padding: 1.1rem;
-  }
-  .submit-button {
-    font-size: 1.5rem;
-    padding: 1.5rem 3.5rem;
-  }
-  .success-image {
-    width: 550px;
-    height: 367px;
-  }
-}
-
-/* Apple MacBook Retina (2560x1600, 2880x1800) */
-@include macbook-retina {
-  .registration-container {
-    max-width: 2200px;
-  }
-  .registration-section {
-    max-width: 900px;
-  }
-  .reg_title {
-    font-size: 1.7rem;
-  }
-  .form-input {
-    font-size: 1.3rem;
-    padding: 0.85rem;
-  }
-  .submit-button {
-    font-size: 1.3rem;
-    padding: 1.2rem 2.5rem;
-  }
-  .success-image {
-    width: 450px;
-    height: 300px;
-  }
-}
-
-/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-@include imac-retina {
-  .registration-container {
-    max-width: 3000px;
-  }
-  .registration-section {
-    max-width: 1100px;
-  }
-  .reg_title {
-    font-size: 2.2rem;
-  }
-  .form-input {
-    font-size: 1.5rem;
-    padding: 1.1rem;
-  }
-  .submit-button {
-    font-size: 1.5rem;
-    padding: 1.5rem 3.5rem;
-  }
-  .success-image {
-    width: 550px;
-    height: 367px;
-  }
-}
-
-/* Tablets (768px–1024px) */
-@include tablet {
-  .registration-container {
-    max-width: 740px;
-    padding: 15px;
-  }
-  .registration-section {
-    max-width: 600px;
-    padding: 1.5rem 0;
-  }
-  .reg_title {
-    font-size: 1.2rem;
-  }
-  .form-input {
-    font-size: 0.95rem;
-    padding: 0.5rem;
-  }
-  .submit-button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
-    width: 100%;
-  }
-  .success-image {
-    width: 300px;
-    height: 200px;
-  }
-  .eye-icon {
-    font-size: 1.2rem;
-  }
-  .error-message,
-  .submit-message {
-    font-size: 0.85rem;
-  }
-}
-
-/* Large smartphones (576px–767px) */
-@include mobile-large {
-  .registration-container {
-    max-width: 540px;
-    padding: 10px;
-  }
-  .registration-section {
-    max-width: 100%;
-    padding: 1.2rem 0;
-  }
-  .reg_title {
-    font-size: 1.1rem;
-  }
-  .form-input {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-  .submit-button {
-    font-size: 0.9rem;
-    padding: 0.7rem 1.2rem;
-    width: 100%;
-  }
-  .success-image {
-    width: 250px;
-    height: 167px;
-  }
-  .eye-icon {
-    font-size: 1.1rem;
-  }
-  .error-message,
-  .submit-message {
-    font-size: 0.8rem;
-  }
-}
-
-/* Small smartphones (≤575px) */
-@include mobile-small {
-  .registration-container {
-    max-width: 100%;
-    padding: 10px;
-  }
-  .registration-section {
-    max-width: 100%;
-    padding: 1rem 0;
-  }
-  .reg_title {
-    font-size: 1rem;
-  }
-  .form-input {
-    font-size: 0.85rem;
-    padding: 0.4rem;
-  }
-  .submit-button {
-    font-size: 0.85rem;
-    padding: 0.6rem 1rem;
-    width: 100%;
-  }
-  .success-image {
-    max-width: 80%;
-    width: 200px;
-    height: 133px;
-  }
-  .eye-icon {
-    font-size: 1rem;
-  }
-  .error-message,
-  .submit-message {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 600px) {
-  .registration-section {
-    padding: 1rem;
-  }
-
-  .submit-button {
-    width: 100%;
-  }
-
-  .success-image {
-    max-width: 80%;
-  }
+.success-image {
+  max-width: 80%;
 }

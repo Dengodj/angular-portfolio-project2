@@ -4,6 +4,34 @@
   margin: 0 auto;
   padding: 40px 15px;
   background-color: var(--color-background);
+
+  @include qhd {
+    max-width: 1800px;
+  }
+
+  @include uhd-4k {
+    max-width: 2400px;
+  }
+
+  @include uhd-5k {
+    max-width: 3000px;
+  }
+
+  @include macbook-retina {
+    max-width: 2000px;
+  }
+
+  @include imac-retina {
+    max-width: 3000px;
+  }
+
+  @include desktop-small {
+    max-width: 1200px;
+  }
+
+  @include tablet {
+    max-width: 600px;
+  }
 }
 
 .text-center_contacts {
@@ -12,12 +40,48 @@
   text-align: center;
   margin-bottom: 30px;
   color: var(--color-text);
+
+  @include qhd {
+    font-size: 2.4rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2.6rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.8rem;
+  }
+
+  @include macbook-retina {
+    font-size: 2.4rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.8rem;
+  }
+
+  @include tablet {
+    font-size: 1.8rem;
+  }
+
+  @include mobile() {
+    font-size: 1.5rem;
+  }
 }
 
 .grid-contacts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @include mobile-xl() {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-info {
@@ -28,6 +92,41 @@
 .contact-info h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+
+  @include qhd {
+    font-size: 1.8rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.2rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.8rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.2rem;
+  }
+
+  @include tablet {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+  }
+
+  @include mobile() {
+    font-size: 1.2rem;
+  }
+
+  @include mobile-xl() {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 
 .contact-info p {
@@ -50,6 +149,37 @@
 .contact-form h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+
+  @include qhd {
+    font-size: 1.8rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.2rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.8rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.2rem;
+  }
+
+  @include tablet {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include mobile() {
+    font-size: 1.2rem;
+  }
 }
 
 .form-group {
@@ -68,6 +198,22 @@
   font-size: 1rem;
   border: 1px solid var(--color-primary);
   border-radius: 4px;
+
+  @include macbook-retina {
+    font-size: 1.1rem;
+  }
+
+  @include imac-retina {
+    font-size: 1.2rem;
+  }
+
+  @include tablet {
+    font-size: 0.95rem;
+  }
+
+  @include mobile {
+    font-size: 0.9rem;
+  }
 }
 
 .form-control:focus {
@@ -84,6 +230,50 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  @include qhd {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+
+  @include uhd-4k {
+    margin-top: 22px;
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+
+  @include uhd-5k {
+    margin-top: 24px;
+    padding: 18px 36px;
+    font-size: 1.4rem;
+  }
+
+  @include macbook-retina {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+
+  @include imac-retina {
+    margin-top: 24px;
+    padding: 18px 36px;
+    font-size: 1.4rem;
+  }
+
+  @include tablet {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 0.95rem;
+  }
+
+  @include mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    width: fit-content;
+  }
 }
 
 .submit-button:hover {
@@ -95,237 +285,4 @@
   background-color: var(--text-muted);
   border-color: transparent;
   cursor: not-allowed;
-}
-
-/* Full HD (1920x1080) */
-@include full-hd() {
-  .section-contacts {
-    max-width: 1400px;
-  }
-  .text-center_contacts {
-    font-size: 2.2rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.7rem;
-  }
-  .submit-button {
-    padding: 12px 24px;
-    font-size: 1.1rem;
-  }
-}
-
-/* 2K/QHD (2560x1440) */
-@include qhd() {
-  .section-contacts {
-    max-width: 1800px;
-  }
-  .text-center_contacts {
-    font-size: 2.4rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.8rem;
-  }
-  .submit-button {
-    padding: 14px 28px;
-    font-size: 1.2rem;
-  }
-}
-
-/* 4K (3840x2160) */
-@include uhd-4k() {
-  .section-contacts {
-    max-width: 2400px;
-  }
-  .text-center_contacts {
-    font-size: 2.6rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 2rem;
-  }
-  .submit-button {
-    padding: 16px 32px;
-    font-size: 1.3rem;
-  }
-}
-
-/* 5K (5120x2880) */
-@include uhd-5k() {
-  .section-contacts {
-    max-width: 3000px;
-  }
-  .text-center_contacts {
-    font-size: 2.8rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 2.2rem;
-  }
-  .submit-button {
-    padding: 18px 36px;
-    font-size: 1.4rem;
-  }
-}
-
-/* Apple MacBook Retina (2560x1600, 2880x1800) */
-@include macbook-retina() {
-  .section-contacts {
-    max-width: 2000px;
-  }
-  .text-center_contacts {
-    font-size: 2.3rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.8rem;
-  }
-  .form-control {
-    font-size: 1.1rem;
-  }
-  .submit-button {
-    padding: 14px 28px;
-    font-size: 1.2rem;
-  }
-}
-
-/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-@include imac-retina() {
-  .section-contacts {
-    max-width: 3000px;
-  }
-  .text-center_contacts {
-    font-size: 2.8rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 2.2rem;
-  }
-  .form-control {
-    font-size: 1.2rem;
-  }
-  .submit-button {
-    padding: 18px 36px;
-    font-size: 1.4rem;
-  }
-}
-
-/* Tablets (768px–1024px)*/
-@include tablet {
-  .grid-contacts {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-info,
-  .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .text-center_contacts {
-    font-size: 1.8rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.4rem;
-  }
-  .form-control {
-    font-size: 0.95rem;
-  }
-  .contact-form {
-    text-align: center;
-  }
-  .submit-button {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 0.95rem;
-  }
-}
-
-/* Large smartphones (iPhone 14 Pro Max, 576px–767px) */
-@include mobile-large() {
-  .text-center_contacts {
-    font-size: 1.5rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.2rem;
-  }
-  .form-control {
-    font-size: 0.9rem;
-  }
-  .contact-form {
-    text-align: center;
-  }
-  .submit-button {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 0.9rem;
-  }
-}
-
-/* Small smartphones (≤575px) */
-@include mobile-small() {
-  .text-center_contacts {
-    font-size: 1.5rem;
-  }
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.2rem;
-  }
-  .form-control {
-    font-size: 0.9rem;
-  }
-  .contact-form {
-    text-align: center;
-  }
-  .submit-button {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 0.9rem;
-  }
-}
-
-/* for mobile */
-@include mobile {
-  .text-center_contacts {
-    font-size: 1.5rem;
-  }
-
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 1.2rem;
-  }
-
-  .form-control {
-    font-size: 0.9rem;
-  }
-
-  .submit-button {
-    display: block;
-    font-size: 0.9rem;
-    margin: 0 auto;
-    width: fit-content;
-  }
-}
-
-@include mobile-xl() {
-  .grid-contacts {
-    grid-template-columns: 1fr;
-  }
-  .contact-info,
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-@include desktop-small() {
-  .section-contacts {
-    max-width: 1200px;
-  }
 }

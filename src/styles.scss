@@ -78,13 +78,6 @@ img {
   gap: 40px;
 }
 
-/* Full HD (1920x1080) */
-@include full-hd() {
-  .container {
-    max-width: 1760px;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @include qhd() {
   .container {
