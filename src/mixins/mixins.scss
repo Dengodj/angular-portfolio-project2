@@ -42,13 +42,6 @@
   }
 }
 
-/* Full HD (1920x1080) */
-@mixin full-hd() {
-  @media (min-width: 1920px) and (max-width: 2559px) {
-    @content;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @mixin qhd() {
   @media (min-width: 2560px) and (max-width: 3839px) {

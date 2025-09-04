@@ -313,49 +313,6 @@
   display: block;
 }
 
-/* Full HD (1920x1080) */
-@include full-hd {
-  .main-container_about {
-    max-width: 1800px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 1.5em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.3rem;
-  }
-  .container-video {
-    flex: 0 0 800px;
-    max-width: 800px;
-    height: 400px;
-  }
-  .video-box {
-    max-width: 400px;
-    height: 280px;
-    margin-left: 80px;
-    transform: translateX(-25px);
-  }
-  .video-infotext {
-    font-size: 1.2em;
-    padding: 35px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 350px;
-    padding: 25px;
-    font-size: 1.1rem;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @include qhd {
   .main-container_about {

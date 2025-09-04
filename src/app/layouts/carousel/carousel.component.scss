@@ -104,21 +104,6 @@
   }
 }
 
-/* Full HD (1920x1080) */
-@include full-hd {
-  .carousel-container {
-    max-width: 600px;
-  }
-  .carousel-control {
-    font-size: 28px;
-    padding: 12px;
-  }
-  .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @include qhd {
   .carousel-container {

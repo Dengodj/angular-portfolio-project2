@@ -83,27 +83,6 @@
   font-size: 0.85em;
 }
 
-/* Full HD (1920x1080) */
-@include full-hd {
-  .accordion {
-    padding-top: 25px;
-  }
-  .accordion-description {
-    font-size: 1.3em;
-    margin-left: 18px;
-  }
-  .accordion-header {
-    font-size: 1rem;
-    padding: 18px;
-  }
-  .accordion-header::after {
-    font-size: 1rem;
-  }
-  .accordion-content p {
-    font-size: 1rem;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @include qhd {
   .accordion {

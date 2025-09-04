@@ -336,69 +336,6 @@
   }
 }
 
-/* Full HD (1920x1080) */
-@include full-hd {
-  .footer {
-    padding: clamp(70px, 2.5rem + 9vw, 130px) 0 60px;
-  }
-  .container-footer {
-    gap: 80px;
-    justify-content: center;
-  }
-  .footer__grid {
-    max-width: 1800px;
-    margin: 0 auto;
-    gap: 70px 30px;
-  }
-  .footer-text {
-    font-size: 1.3em;
-    max-width: 1000px;
-  }
-  .footer__logo {
-    font-size: 1em;
-    margin-left: 15px;
-  }
-  .footer__nav-title {
-    font-size: 19px;
-  }
-  .footer__copyright,
-  .author {
-    font-size: 12px;
-  }
-  .footer__links {
-    gap: 50px;
-  }
-  .github-icon,
-  .mixcloud-icon,
-  .soundcloud-icon {
-    width: 24px;
-    height: 24px;
-  }
-  .info-dot {
-    width: 48px;
-    height: 48px;
-  }
-  .info-dot__circle {
-    width: 14px;
-    height: 14px;
-  }
-  .info-dot__ring--outer {
-    width: 48px;
-    height: 48px;
-  }
-  .info-dot__ring--middle {
-    width: 36px;
-    height: 36px;
-  }
-  .info-dot__ring--inner {
-    width: 24px;
-    height: 24px;
-  }
-  .info-dot::after {
-    font-size: 0.85rem;
-  }
-}
-
 /* 2K/QHD (2560x1440) */
 @include qhd {
   .footer {
