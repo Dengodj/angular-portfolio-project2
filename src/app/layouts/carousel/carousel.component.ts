@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  ViewChild,
+  inject,
+} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -7,31 +14,57 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CarouselComponent {
-  @ViewChild('carouselSlides', { static: false }) carouselSlides!: ElementRef;
+  @ViewChild('carouselSlides', { static: false }) carouselSlides?: ElementRef;
 
   slides = [
-    { imageUrl: '/img/headphones.webp' },
-    { imageUrl: '/img/NUAGE.webp' },
-    { imageUrl: '/img/music-controller.webp' },
-    { imageUrl: '/img/nuage-console.webp' },
-    { imageUrl: '/img/mic.webp' },
-    { imageUrl: '/img/digital-audio.webp' },
-    { imageUrl: '/img/faders.webp' },
-    { imageUrl: '/img/keyboard.webp' },
-    { imageUrl: '/img/ptstudio.webp' },
-    { imageUrl: '/img/synthesizer.webp' },
+    { imageUrl: '/img/headphones.webp', loaded: false, error: false },
+    { imageUrl: '/img/NUAGE.webp', loaded: false, error: false },
+    { imageUrl: '/img/music-controller.webp', loaded: false, error: false },
+    { imageUrl: '/img/nuage-console.webp', loaded: false, error: false },
+    { imageUrl: '/img/mic.webp', loaded: false, error: false },
+    { imageUrl: '/img/digital-audio.webp', loaded: false, error: false },
+    { imageUrl: '/img/faders.webp', loaded: false, error: false },
+    { imageUrl: '/img/keyboard.webp', loaded: false, error: false },
+    { imageUrl: '/img/ptstudio.webp', loaded: false, error: false },
+    { imageUrl: '/img/synthesizer.webp', loaded: false, error: false },
   ];
   activeSlideIndex = 0;
+
+  private cdr = inject(ChangeDetectorRef);
+
+  constructor() {
+    this.preloadImages();
+  }
+
+  preloadImages() {
+    this.slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.imageUrl;
+      img.onload = () => {
+        slide.loaded = true;
+        this.cdr.markForCheck();
+      };
+      img.onerror = () => {
+        slide.error = true;
+        this.cdr.markForCheck();
+      };
+    });
+  }
 
   prevSlide() {
     if (this.activeSlideIndex === 0) {
       this.disableTransition();
       this.activeSlideIndex = this.slides.length - 1;
-      setTimeout(() => this.enableTransition(), 0);
+      setTimeout(() => {
+        this.enableTransition();
+        this.cdr.markForCheck();
+      }, 50);
     } else {
       this.activeSlideIndex--;
+      this.cdr.markForCheck();
     }
   }
 
@@ -39,24 +72,29 @@ export class CarouselComponent {
     if (this.activeSlideIndex === this.slides.length - 1) {
       this.disableTransition();
       this.activeSlideIndex = 0;
-      setTimeout(() => this.enableTransition(), 0);
+      setTimeout(() => {
+        this.enableTransition();
+        this.cdr.markForCheck();
+      }, 50);
     } else {
       this.activeSlideIndex++;
+      this.cdr.markForCheck();
     }
   }
 
   goToSlide(index: number) {
     this.activeSlideIndex = index;
+    this.cdr.markForCheck();
   }
 
   private disableTransition() {
-    if (this.carouselSlides) {
+    if (this.carouselSlides?.nativeElement) {
       this.carouselSlides.nativeElement.classList.add('no-transition');
     }
   }
 
   private enableTransition() {
-    if (this.carouselSlides) {
+    if (this.carouselSlides?.nativeElement) {
       this.carouselSlides.nativeElement.classList.remove('no-transition');
     }
   }
