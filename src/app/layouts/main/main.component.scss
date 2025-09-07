@@ -17,38 +17,6 @@
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
-
-  @include retina-bg(url("/img/music-controller@2x.webp"));
-
-  @include qhd {
-    padding: 30px;
-    gap: 30px;
-  }
-
-  @include uhd-4k {
-    padding: 40px;
-    gap: 40px;
-  }
-
-  @include uhd-5k {
-    padding: 50px;
-    gap: 50px;
-  }
-
-  @include macbook-retina {
-    padding: 30px;
-    gap: 30px;
-  }
-
-  @include imac-retina {
-    padding: 50px;
-    gap: 50px;
-  }
-
-  @include tablet {
-    padding: 15px;
-    gap: 15px;
-  }
 }
 
 .main-container::before {
@@ -64,6 +32,7 @@
   background-repeat: no-repeat;
   opacity: 0.8;
   z-index: -1;
+  @include retina-bg(url("/img/music-controller@2x.webp"));
 }
 
 .content-block {
@@ -77,133 +46,119 @@
   padding: 20px;
   border: 1px solid #e4b378c9;
   background-color: rgba(22, 76, 152, 0.332);
-
-  @include qhd {
-    max-width: 1600px;
-    padding: 30px;
-  }
-
-  @include uhd-4k {
-    max-width: 2000px;
-    padding: 40px;
-  }
-
-  @include uhd-5k {
-    max-width: 2400px;
-    padding: 50px;
-  }
-
-  @include imac-retina {
-    max-width: 2400px;
-    padding: 50px;
-  }
-
-  @include tablet {
-    max-width: 740px;
-    padding: 15px;
-  }
 }
 
 .main-title {
   font-size: 1.95rem;
   color: var(--color-logo);
-  justify-content: center;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  @include qhd {
-    font-size: 2.5rem;
-  }
-
-  @include uhd-4k {
-    font-size: 3rem;
-  }
-
-  @include uhd-5k {
-    font-size: 3.5rem;
-  }
-
-  @include macbook-retina {
-    font-size: 2.5rem;
-  }
-
-  @include imac-retina {
-    font-size: 3.5rem;
-  }
-
-  @include tablet {
-    font-size: 1.7rem;
-  }
-
-  @include mobile() {
-    font-size: 1.5rem;
-  }
+  margin: 20px 0;
+  transition: font-size 0.3s ease;
 }
 
 .main-description {
   font-size: 0.88rem;
   color: var(--color-logo);
   line-height: 1.5;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: left;
-
-  @include qhd {
-    font-size: 1.25rem;
-  }
-
-  @include uhd-4k {
-    font-size: 1.3rem;
-  }
-
-  @include uhd-5k {
-    font-size: 1.5rem;
-  }
-
-  @include macbook-retina {
-    font-size: 1.1rem;
-  }
-
-  @include imac-retina {
-    font-size: 1.5rem;
-  }
-
-  @include tablet {
-    font-size: 0.8rem;
-  }
+  transition: font-size 0.3s ease;
 }
 
 .block-title {
-  margin-top: 10px;
+  margin: 10px 0;
   font-size: 1.5rem;
   color: var(--color-logo);
-  margin-bottom: 10px;
+  transition: font-size 0.3s ease;
+}
 
-  @include qhd {
+/* 2K/QHD and MacBook Retina */
+@media (min-width: 2560px) and (min-height: 1440px),
+  only screen and (min-resolution: 192dpi) {
+  .main-container {
+    padding: 30px;
+    gap: 30px;
+  }
+  .content-block {
+    max-width: 1600px;
+    padding: 30px;
+  }
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .main-description {
+    font-size: 1.1rem;
+  }
+  .block-title {
     font-size: 1.8rem;
   }
+}
 
-  @include uhd-4k {
+/* 4K, 5K, iMac Retina */
+@media (min-width: 3840px) {
+  .main-container {
+    padding: 40px;
+    gap: 40px;
+  }
+  .content-block {
+    max-width: 2000px;
+    padding: 40px;
+  }
+  .main-title {
+    font-size: 3rem;
+  }
+  .main-description {
+    font-size: 1.3rem;
+  }
+  .block-title {
     font-size: 2rem;
   }
+}
 
-  @include uhd-5k {
-    font-size: 2.2rem;
+/* Tablets (768px–1024px) */
+@include tablet {
+  .main-container {
+    padding: 15px;
+    gap: 15px;
   }
-
-  @include macbook-retina {
-    font-size: 1.8rem;
+  .content-block {
+    max-width: 740px;
+    padding: 15px;
   }
-
-  @include imac-retina {
-    font-size: 2.2rem;
+  .main-title {
+    font-size: 1.7rem;
   }
+  .main-description {
+    font-size: 0.8rem;
+  }
+  .block-title {
+    font-size: 1.3rem;
+  }
+}
 
-  @include tablet {
+/* Smartphones (≤767px) */
+@include mobile {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 10px;
+  }
+  .content-block {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .main-title {
     font-size: 1.5rem;
   }
-
-  @include mobile() {
+  .main-description {
+    font-size: 0.75rem;
+  }
+  .block-title {
+    text-align: center;
     font-size: 1.2rem;
   }
 }

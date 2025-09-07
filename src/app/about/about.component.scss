@@ -314,8 +314,236 @@
   display: block;
 }
 
+/* 2K/QHD and Retina */
+@media (min-width: 2560px) and (min-height: 1440px),
+  only screen and (min-resolution: 192dpi) {
+  .main-container_about {
+    max-width: 2000px;
+  }
+  .text-center_about2,
+  .text-center_about3,
+  .text-center_about4,
+  .text-center_about5,
+  .text-center_about6 {
+    font-size: 1.7rem;
+  }
+  .text-about_page1,
+  .text-about_page2,
+  .text-about_page3,
+  .text-about_page4,
+  .text-about_page5,
+  .text-about_page6 {
+    font-size: 1.4rem;
+  }
+  .container-video {
+    flex: 0 0 900px;
+    max-width: 900px;
+    height: 450px;
+  }
+  .video-box {
+    width: 450px;
+    height: 315px;
+    margin-left: 70px;
+  }
+  .video-infotext {
+    font-size: 1.3rem;
+    padding: 30px;
+  }
+  .explore-atmos,
+  .join-our {
+    max-width: 400px;
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* 4K/5K */
+@media (min-width: 3840px) {
+  .main-container_about {
+    max-width: 2400px;
+  }
+  .text-center_about2,
+  .text-center_about3,
+  .text-center_about4,
+  .text-center_about5,
+  .text-center_about6 {
+    font-size: 2rem;
+  }
+  .text-about_page1,
+  .text-about_page2,
+  .text-about_page3,
+  .text-about_page4,
+  .text-about_page5,
+  .text-about_page6 {
+    font-size: 1.5rem;
+  }
+  .container-video {
+    flex: 0 0 1000px;
+    max-width: 1000px;
+    height: 500px;
+  }
+  .video-box {
+    width: 500px;
+    height: 350px;
+    margin-left: 80px;
+  }
+  .video-infotext {
+    font-size: 1.4rem;
+    padding: 35px;
+  }
+  .explore-atmos,
+  .join-our {
+    max-width: 450px;
+    padding: 25px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets */
+@include tablet {
+  .main-container_about {
+    padding: 15px;
+  }
+  .section-about1,
+  .section-about2,
+  .section-about3,
+  .section-about4,
+  .section-about5,
+  .section-about6 {
+    padding: 15px;
+  }
+  .text-center_about2,
+  .text-center_about3,
+  .text-center_about4,
+  .text-center_about5,
+  .text-center_about6 {
+    font-size: 1.15rem;
+  }
+  .text-about_page1,
+  .text-about_page2,
+  .text-about_page3,
+  .text-about_page4,
+  .text-about_page5,
+  .text-about_page6 {
+    font-size: 1rem;
+  }
+  .video-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .container-video {
+    flex: 0 0 100%;
+    max-width: 500px;
+    height: 260px;
+  }
+  .video-box {
+    width: 250px;
+    height: 175px;
+    margin: 8px auto;
+  }
+  .video-info-wrapper {
+    order: -1;
+    max-width: 500px;
+  }
+  .video-infotext {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+  .play-arrow img {
+    width: 30px;
+    height: 30px;
+  }
+  .grid-section5 {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .text-box,
+  .image-box {
+    max-width: 100%;
+  }
+  .image-innovation {
+    max-width: 300px;
+  }
+  .explore-atmos,
+  .join-our {
+    max-width: 250px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smartphones */
+@include mobile {
+  .main-container_about {
+    padding: 10px;
+  }
+  .section-about1,
+  .section-about2,
+  .section-about3,
+  .section-about4,
+  .section-about5,
+  .section-about6 {
+    padding: 10px;
+  }
+  .text-center_about2,
+  .text-center_about3,
+  .text-center_about4,
+  .text-center_about5,
+  .text-center_about6 {
+    font-size: 1rem;
+  }
+  .text-about_page1,
+  .text-about_page2,
+  .text-about_page3,
+  .text-about_page4,
+  .text-about_page5,
+  .text-about_page6 {
+    font-size: 0.85rem;
+  }
+  .container-video {
+    max-width: 100%;
+    height: 200px;
+    background-image: none;
+  }
+  .video-box {
+    width: 200px;
+    height: 140px;
+    margin: 8px auto;
+  }
+  .video-info-wrapper {
+    max-width: 100%;
+  }
+  .video-infotext {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+  .play-arrow img {
+    width: 24px;
+    height: 24px;
+  }
+  .grid-section5 {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .text-box,
+  .image-box {
+    max-width: 100%;
+  }
+  .image-innovation {
+    max-width: 100%;
+  }
+  .explore-atmos,
+  .join-our {
+    max-width: 200px;
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
+
 /* 2K/QHD (2560x1440) */
-@include qhd {
+/* @include qhd {
   .main-container_about {
     max-width: 2000px;
   }
@@ -355,10 +583,10 @@
     padding: 30px;
     font-size: 1.2rem;
   }
-}
+} */
 
 /* 4K (3840x2160) */
-@include uhd-4k {
+/* @include uhd-4k {
   .main-container_about {
     max-width: 2400px;
   }
@@ -401,7 +629,7 @@
 }
 
 /* 5K (5120x2880) */
-@include uhd-5k {
+/* @include uhd-5k {
   .main-container_about {
     max-width: 3000px;
   }
@@ -442,9 +670,9 @@
     font-size: 1.4rem;
   }
 }
-
+ */
 /* Apple MacBook Retina (2560x1600, 2880x1800) */
-@include macbook-retina {
+/*@include macbook-retina {
   .main-container_about {
     max-width: 2200px;
   }
@@ -485,9 +713,9 @@
     font-size: 1.2rem;
   }
 }
-
+ */
 /* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-@include imac-retina {
+/* @include imac-retina {
   .main-container_about {
     max-width: 3000px;
   }
@@ -527,11 +755,11 @@
     padding: 40px;
     font-size: 1.4rem;
   }
-}
+} */
 
 /* For mobile */
 /* Desktop Small (≤1400px) */
-@include desktop-small {
+/* @include desktop-small {
   .container-video {
     flex: 0 0 600px;
     max-width: 600px;
@@ -566,9 +794,9 @@
     order: 0;
   }
 }
-
+ */
 /* Tablet (≤992px) */
-@include tablet {
+/* @include tablet {
   .video-content-wrapper {
     flex-direction: column;
     align-items: center;
@@ -636,9 +864,9 @@
     font-size: 1.3rem;
   }
 }
-
+ */
 /* Mobile XL (≤819px) */
-@include mobile-xl {
+/* @include mobile-xl {
   .container-video {
     max-width: 400px;
     height: 210px;
@@ -673,10 +901,10 @@
     font-size: 0.9rem;
     padding-left: 10px;
   }
-}
+} */
 
 /* Mobile (≤629px) */
-@include mobile {
+/* @include mobile {
   .container {
     padding: 0 10px;
   }
@@ -750,10 +978,10 @@
   .text-about_page1 {
     text-align: start;
     padding-left: 5px;
-  }
+  } */
 
-  /* text-about_page5 */
-  .grid-section5 {
+/* text-about_page5 */
+/*   .grid-section5 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -784,4 +1012,4 @@
     padding: 8px 15px;
     font-size: 0.9rem;
   }
-}
+} */
