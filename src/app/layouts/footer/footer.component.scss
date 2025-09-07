@@ -337,99 +337,90 @@
   }
 }
 
-/* 2K/QHD (2560x1440) */
-@include qhd {
+/* 2K/QHD and MacBook Retina */
+@media (min-width: 2560px) and (min-height: 1440px),
+  only screen and (min-resolution: 192dpi) {
   .footer {
-    padding: clamp(80px, 3rem + 9.5vw, 140px) 0 70px;
+    padding: 80px 0 70px;
   }
   .container-footer {
-    gap: 80px;
-    justify-content: center;
+    gap: 30px;
   }
   .footer__grid {
-    max-width: 2000px;
-    margin: 0 auto;
-    gap: 80px 35px;
+    gap: 30px;
+    margin-bottom: 80px;
   }
   .footer-text {
     font-size: 1.4em;
     max-width: 1200px;
   }
   .footer__logo {
-    font-size: 1.1em;
-    margin-left: 18px;
+    font-size: 1em;
   }
   .footer__nav-title {
     font-size: 20px;
   }
-  .footer__copyright,
-  .author {
-    font-size: 14px;
+  .footer__copyright {
+    font-size: 18px;
   }
   .footer__links {
-    gap: 60px;
+    gap: 50px;
   }
   .github-icon,
   .mixcloud-icon,
   .soundcloud-icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
   .info-dot {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
   .info-dot__circle {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
   .info-dot__ring--outer {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
   .info-dot__ring--middle {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
   .info-dot__ring--inner {
-    width: 28px;
-    height: 28px;
-  }
-  .info-dot::after {
-    font-size: 0.9rem;
+    width: 24px;
+    height: 24px;
   }
 }
 
-/* 4K (3840x2160) */
-@include uhd-4k {
+/* 4K, 5K, iMac Retina */
+@media (min-width: 3840px) {
   .footer {
-    padding: clamp(90px, 3.5rem + 10vw, 150px) 0 80px;
+    padding: 90px 0 80px;
   }
   .container-footer {
     gap: 40px;
   }
   .footer__grid {
-    max-width: 2400px;
-    margin: 0 auto;
-    gap: 90px 40px;
+    gap: 40px;
+    margin-bottom: 90px;
   }
   .footer-text {
     font-size: 1.5em;
     max-width: 1400px;
   }
   .footer__logo {
-    font-size: 1.2em;
-    margin-left: 20px;
+    font-size: 1.1em;
   }
   .footer__nav-title {
     font-size: 22px;
   }
-  .footer__copyright,
-  .author {
-    font-size: 16px;
+  .footer__copyright {
+    font-size: 20px;
   }
   .footer__links {
-    gap: 70px;
+    gap: 60px;
   }
   .github-icon,
   .mixcloud-icon,
@@ -442,8 +433,8 @@
     height: 56px;
   }
   .info-dot__circle {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   .info-dot__ring--outer {
     width: 56px;
@@ -457,194 +448,63 @@
     width: 32px;
     height: 32px;
   }
-  .info-dot::after {
-    font-size: 1rem;
-  }
 }
 
-/* 5K (5120x2880) */
-@include uhd-5k {
+/* Tablets (768px–1024px) */
+@include tablet {
   .footer {
-    padding: clamp(100px, 4rem + 10.5vw, 160px) 0 90px;
+    padding: 50px 0 40px;
   }
   .container-footer {
-    gap: 45px;
+    gap: 15px;
+    flex-wrap: wrap;
   }
   .footer__grid {
-    max-width: 3000px;
-    margin: 0 auto;
-    gap: 100px 45px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 50px;
   }
   .footer-text {
-    font-size: 1.6em;
-    max-width: 1600px;
+    font-size: 1em;
+    max-width: 600px;
   }
   .footer__logo {
-    font-size: 1.3em;
-    margin-left: 22px;
+    font-size: 0.8em;
   }
   .footer__nav-title {
-    font-size: 24px;
+    font-size: 16px;
   }
-  .footer__copyright,
-  .author {
-    font-size: 22px;
+  .footer__copyright {
+    font-size: 14px;
   }
   .footer__links {
-    gap: 80px;
+    gap: 30px;
   }
   .github-icon,
   .mixcloud-icon,
   .soundcloud-icon {
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
   }
   .info-dot {
-    width: 60px;
-    height: 60px;
-  }
-  .info-dot__circle {
-    width: 20px;
-    height: 20px;
-  }
-  .info-dot__ring--outer {
-    width: 60px;
-    height: 60px;
-  }
-  .info-dot__ring--middle {
-    width: 48px;
-    height: 48px;
-  }
-  .info-dot__ring--inner {
     width: 36px;
     height: 36px;
   }
-  .info-dot::after {
-    font-size: 1.1rem;
+  .info-dot__circle {
+    width: 10px;
+    height: 10px;
   }
-}
-
-/* Apple MacBook Retina (2560x1600, 2880x1800) */
-@include macbook-retina {
-  .footer {
-    padding: clamp(80px, 3rem + 9.5vw, 140px) 0 70px;
+  .info-dot__ring--outer {
+    width: 36px;
+    height: 36px;
   }
-  .container-footer {
-    gap: 35px;
-  }
-  .footer__grid {
-    max-width: 2000px;
-    margin: 0 auto;
-    gap: 80px 35px;
-  }
-  .footer-text {
-    font-size: 1.4em;
-    max-width: 1200px;
-  }
-  .footer__logo {
-    font-size: 1.1em;
-    margin-left: 18px;
-  }
-  .footer__nav-title {
-    font-size: 20px;
-  }
-  .footer__copyright,
-  .author {
-    font-size: 18px;
-  }
-  .footer__links {
-    gap: 60px;
-  }
-  .github-icon,
-  .mixcloud-icon,
-  .soundcloud-icon {
+  .info-dot__ring--middle {
     width: 26px;
     height: 26px;
   }
-  .info-dot {
-    width: 52px;
-    height: 52px;
-  }
-  .info-dot__circle {
+  .info-dot__ring--inner {
     width: 16px;
     height: 16px;
-  }
-  .info-dot__ring--outer {
-    width: 52px;
-    height: 52px;
-  }
-  .info-dot__ring--middle {
-    width: 40px;
-    height: 40px;
-  }
-  .info-dot__ring--inner {
-    width: 28px;
-    height: 28px;
-  }
-  .info-dot::after {
-    font-size: 0.9rem;
-  }
-}
-
-/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-@include imac-retina {
-  .footer {
-    padding: clamp(100px, 4rem + 10.5vw, 160px) 0 90px;
-  }
-  .container-footer {
-    gap: 45px;
-  }
-  .footer__grid {
-    max-width: 3000px;
-    margin: 0 auto;
-    gap: 100px 45px;
-  }
-  .footer-text {
-    font-size: 1.6em;
-    max-width: 1600px;
-  }
-  .footer__logo {
-    font-size: 1.3em;
-    margin-left: 22px;
-  }
-  .footer__nav-title {
-    font-size: 24px;
-  }
-  .footer__copyright,
-  .author {
-    font-size: 22px;
-  }
-  .footer__links {
-    gap: 80px;
-  }
-  .github-icon,
-  .mixcloud-icon,
-  .soundcloud-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .info-dot {
-    width: 60px;
-    height: 60px;
-  }
-  .info-dot__circle {
-    width: 20px;
-    height: 20px;
-  }
-  .info-dot__ring--outer {
-    width: 60px;
-    height: 60px;
-  }
-  .info-dot__ring--middle {
-    width: 48px;
-    height: 48px;
-  }
-  .info-dot__ring--inner {
-    width: 36px;
-    height: 36px;
-  }
-  .info-dot::after {
-    font-size: 1.1rem;
   }
 }
 
