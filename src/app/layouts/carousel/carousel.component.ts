@@ -20,16 +20,20 @@ export class CarouselComponent {
   @ViewChild('carouselSlides', { static: false }) carouselSlides?: ElementRef;
 
   slides = [
-    { imageUrl: '/img/headphones.webp', loaded: false, error: false },
-    { imageUrl: '/img/NUAGE.webp', loaded: false, error: false },
-    { imageUrl: '/img/music-controller.webp', loaded: false, error: false },
-    { imageUrl: '/img/nuage-console.webp', loaded: false, error: false },
-    { imageUrl: '/img/mic.webp', loaded: false, error: false },
-    { imageUrl: '/img/digital-audio.webp', loaded: false, error: false },
-    { imageUrl: '/img/faders.webp', loaded: false, error: false },
-    { imageUrl: '/img/keyboard.webp', loaded: false, error: false },
-    { imageUrl: '/img/ptstudio.webp', loaded: false, error: false },
-    { imageUrl: '/img/synthesizer.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/headphones.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/NUAGE.webp', loaded: false, error: false },
+    {
+      imageUrl: '/assets/img/music-controller.webp',
+      loaded: false,
+      error: false,
+    },
+    { imageUrl: '/assets/img/nuage-console.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/mic.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/digital-audio.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/faders.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/keyboard.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/ptstudio.webp', loaded: false, error: false },
+    { imageUrl: '/assets/img/synthesizer.webp', loaded: false, error: false },
   ];
   activeSlideIndex = 0;
 

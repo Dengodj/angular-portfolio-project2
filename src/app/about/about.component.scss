@@ -21,14 +21,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/img/AtmosMixingRoom.webp");
+  background-image: url("/assets/img/AtmosMixingRoom.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.8;
   z-index: -1;
 
-  @include retina-bg(url("/img/AtmosMixingRoom@2x.webp"));
+  @include retina-bg(url("/assets/img/AtmosMixingRoom@2x.webp"));
 }
 
 /* Section about 1 */
@@ -257,10 +257,10 @@
   max-width: 700px;
   height: 360px;
   margin: 10px;
-  border: 1px solid var(--color-primary, #4f46e5);
+  border: 1px solid var(--color-primary);
   border-radius: 4px;
   overflow: hidden;
-  background-image: url(/img/Dolby-Atmos-renderer.webp);
+  background-image: url(/assets/img/Dolby-Atmos-renderer.webp);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -269,7 +269,7 @@
   padding: 1rem;
   gap: 1rem;
 
-  @include retina-bg(url(/img/Dolby-Atmos-renderer@2x.webp));
+  @include retina-bg(url(/assets/img/Dolby-Atmos-renderer@2x.webp));
 }
 
 .video-logo {
@@ -295,7 +295,7 @@
 
 .play-arrow {
   background-color: var(--color-text);
-  border: 2px solid var(--color-logo, #ffffff);
+  border: 2px solid var(--color-logo);
   border-radius: 50%;
   cursor: pointer;
   padding: 8px;
@@ -508,9 +508,9 @@
     background-image: none;
   }
   .video-box {
-    width: 200px;
-    height: 140px;
-    margin: 8px auto;
+    width: 400px;
+    height: 180px;
+    padding-left: 40px;
   }
   .video-info-wrapper {
     max-width: 100%;
@@ -541,475 +541,3 @@
     font-size: 0.8rem;
   }
 }
-
-/* 2K/QHD (2560x1440) */
-/* @include qhd {
-  .main-container_about {
-    max-width: 2000px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 1.7em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.4rem;
-  }
-  .container-video {
-    flex: 0 0 900px;
-    max-width: 900px;
-    height: 450px;
-  }
-  .video-box {
-    max-width: 456px;
-    height: 322px;
-    margin-left: 100px;
-    transform: translateX(-30px);
-  }
-  .video-infotext {
-    font-size: 1.3em;
-    padding: 40px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 400px;
-    padding: 30px;
-    font-size: 1.2rem;
-  }
-} */
-
-/* 4K (3840x2160) */
-/* @include uhd-4k {
-  .main-container_about {
-    max-width: 2400px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 2em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.5rem;
-  }
-  .container-video {
-    flex: 0 0 1000px;
-    max-width: 1000px;
-    height: 500px;
-  }
-  .video-box {
-    max-width: 500px;
-    height: 350px;
-    margin-left: 100px;
-    transform: translateX(-35px);
-  }
-  .video-infotext {
-    font-size: 1.4em;
-    padding: 45px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 450px;
-    padding: 35px;
-    font-size: 1.3rem;
-  }
-}
-
-/* 5K (5120x2880) */
-/* @include uhd-5k {
-  .main-container_about {
-    max-width: 3000px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 2.2em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.6rem;
-  }
-  .container-video {
-    flex: 0 0 1100px;
-    max-width: 1100px;
-    height: 550px;
-  }
-  .video-box {
-    max-width: 550px;
-    height: 385px;
-    margin-left: 110px;
-    transform: translateX(-40px);
-  }
-  .video-infotext {
-    font-size: 1.5em;
-    padding: 50px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 500px;
-    padding: 40px;
-    font-size: 1.4rem;
-  }
-}
- */
-/* Apple MacBook Retina (2560x1600, 2880x1800) */
-/*@include macbook-retina {
-  .main-container_about {
-    max-width: 2200px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 1.7em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.4rem;
-  }
-  .container-video {
-    flex: 0 0 900px;
-    max-width: 900px;
-    height: 450px;
-  }
-  .video-box {
-    max-width: 450px;
-    height: 315px;
-    margin-left: 90px;
-    transform: translateX(-30px);
-  }
-  .video-infotext {
-    font-size: 1.3em;
-    padding: 40px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 400px;
-    padding: 30px;
-    font-size: 1.2rem;
-  }
-}
- */
-/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-/* @include imac-retina {
-  .main-container_about {
-    max-width: 3000px;
-  }
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 2.2em;
-  }
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 1.6rem;
-  }
-  .container-video {
-    flex: 0 0 1100px;
-    max-width: 1100px;
-    height: 550px;
-  }
-  .video-box {
-    max-width: 550px;
-    height: 385px;
-    margin-left: 110px;
-    transform: translateX(-40px);
-  }
-  .video-infotext {
-    font-size: 1.5em;
-    padding: 50px;
-  }
-  .explore-atmos,
-  .join-our {
-    max-width: 500px;
-    padding: 40px;
-    font-size: 1.4rem;
-  }
-} */
-
-/* For mobile */
-/* Desktop Small (≤1400px) */
-/* @include desktop-small {
-  .container-video {
-    flex: 0 0 600px;
-    max-width: 600px;
-    height: 310px;
-  }
-
-  .video-box {
-    max-width: 300px;
-    height: 210px;
-    margin-left: 60px;
-    transform: translateX(-15px);
-  }
-
-  .video-infotext {
-    padding: 20px;
-    font-size: 0.95rem;
-  }
-
-  .grid-section5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .text-box {
-    flex: 1 1 auto;
-  }
-
-  .image-box {
-    flex: 0 0 auto;
-    order: 0;
-  }
-}
- */
-/* Tablet (≤992px) */
-/* @include tablet {
-  .video-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .container-video {
-    flex: 0 0 100%;
-    max-width: 500px;
-    height: 260px;
-    order: 1;
-  }
-
-  .video-box {
-    max-width: 250px;
-    height: 175px;
-    margin-left: auto;
-    margin-right: auto;
-    transform: translateX(0);
-  }
-
-  .video-info-wrapper {
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    order: -1;
-  }
-
-  .video-infotext {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .play-arrow {
-    padding: 6px;
-  }
-
-  .play-arrow img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .grid-about_page {
-    grid-template-columns: 1fr;
-  }
-
-  .section-about1,
-  .section-about2,
-  .section-about3,
-  .section-about4,
-  .section-about5,
-  .section-about6 {
-    padding: 30px 0;
-  }
-
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle-about3 {
-    font-size: 1.3rem;
-  }
-}
- */
-/* Mobile XL (≤819px) */
-/* @include mobile-xl {
-  .container-video {
-    max-width: 400px;
-    height: 210px;
-    order: 1;
-  }
-
-  .video-box {
-    max-width: 200px;
-    height: 140px;
-  }
-
-  .video-info-wrapper {
-    order: -1;
-  }
-
-  .video-infotext {
-    padding: 10px;
-    font-size: 0.85rem;
-  }
-
-  .play-arrow img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 0.9rem;
-    padding-left: 10px;
-  }
-} */
-
-/* Mobile (≤629px) */
-/* @include mobile {
-  .container {
-    padding: 0 10px;
-  }
-
-  .container-video {
-    max-width: 100%;
-    height: 240px;
-    padding: 0.5rem;
-    background-image: none;
-    order: 1;
-  }
-
-  .video-box {
-    max-width: 240px;
-    height: 168px;
-    margin-top: 8px;
-    margin-left: auto;
-    margin-right: auto;
-    transform: translateX(0);
-  }
-
-  .video-info-wrapper {
-    order: -1;
-  }
-
-  .video-infotext {
-    padding: 10px;
-    font-size: 0.85rem;
-  }
-
-  .play-arrow {
-    padding: 6px;
-    margin-top: 10px;
-  }
-
-  .play-arrow img {
-    width: 18px;
-    height: 18px;
-  }
-
-  .section-about1,
-  .section-about2,
-  .section-about3,
-  .section-about4,
-  .section-about5,
-  .section-about6 {
-    padding: 20px 0;
-  }
-
-  .text-center_about2,
-  .text-center_about3,
-  .text-center_about4,
-  .text-center_about5,
-  .text-center_about6 {
-    font-size: 1.15rem;
-  }
-
-  .subtitle-about3 {
-    font-size: 1.08rem;
-  }
-
-  .text-about_page1,
-  .text-about_page2,
-  .text-about_page3,
-  .text-about_page4,
-  .text-about_page5,
-  .text-about_page6 {
-    font-size: 0.85rem;
-  }
-
-  .text-about_page1 {
-    text-align: start;
-    padding-left: 5px;
-  } */
-
-/* text-about_page5 */
-/*   .grid-section5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .text-box {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .image-box {
-    width: 100%;
-    max-width: 300px;
-    order: 0;
-  }
-
-  .image-innovation {
-    max-width: 100%;
-  }
-
-  .text-about_page5 {
-    max-width: 100%;
-  }
-
-  .explore-atmos,
-  .join-our {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-} */

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../../languages/language.service';
+import { LanguageService } from '../languages/language.service';
 import { FooterComponent } from '../layouts/footer/footer.component';
 import { HeaderComponent } from '../layouts/header/header.component';
 
@@ -32,14 +32,14 @@ export class ServicesComponent implements OnInit, OnDestroy {
   ];
 
   images: { src: string; alt: string }[] = [
-    { src: '/img/digital-audio.webp', alt: 'services.recording.title' },
-    { src: '/img/DAstudio.webp', alt: 'services.mastering.title' },
+    { src: '/assets/img/digital-audio.webp', alt: 'services.recording.title' },
+    { src: '/assets/img/DAstudio.webp', alt: 'services.mastering.title' },
     {
-      src: '/img/Dolby-Atmos-renderer.webp',
+      src: '/assets/img/Dolby-Atmos-renderer.webp',
       alt: 'services.sound_effects.title',
     },
     {
-      src: '/img/shadow-of-tomb.webp',
+      src: '/assets/img/shadow-of-tomb.webp',
       alt: 'services.video_game_effects.title',
     },
   ];

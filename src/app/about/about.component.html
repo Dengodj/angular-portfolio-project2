@@ -83,7 +83,7 @@
           class="text-about_page4"
           [innerHTML]="'about.section4.text' | translate"
         ></p>
-        <a href="/services" class="explore-atmos" translate
+        <a [routerLink]="'/services'" class="explore-atmos" translate
           >about.section4.link</a
         >
       </section>
@@ -103,7 +103,7 @@
                 playsinline
                 [title]="'about.section5.videoTitle' | translate"
               >
-                <source src="/video/Dolby Atmos.mp4" type="video/mp4" />
+                <source src="/assets/video/Dolby Atmos.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -113,7 +113,7 @@
             <p class="video-infotext" translate>about.section5.text3</p>
             <button class="play-arrow" (click)="playVideo()">
               <img
-                src="/img/icons8-left-arrow-50.png"
+                src="/assets/img/left-arrow-50.png"
                 [alt]="'about.section5.buttonAlt' | translate"
                 width="34"
                 height="34"
@@ -135,7 +135,7 @@
           <div class="image-box">
             <img
               class="image-innovation"
-              src="/img/DHCinema.webp"
+              src="/assets/img/DHCinema.webp"
               [alt]="'about.section6.imageAlt' | translate"
             />
           </div>
@@ -151,7 +151,9 @@
       <section class="section-about6">
         <h2 class="text-center_about6" translate>about.section7.title</h2>
         <p class="text-about_page6" translate>about.section7.text</p>
-        <a href="/contacts" class="join-our" translate>about.section7.link</a>
+        <a [routerLink]="'/contacts'" class="join-our" translate
+          >about.section7.link</a
+        >
       </section>
     </div>
   </div>

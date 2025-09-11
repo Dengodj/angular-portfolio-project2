@@ -19,7 +19,7 @@ import { Subject, filter, takeUntil } from 'rxjs';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   backgroundStyle: Record<string, string> = {
-    'background-image': 'url(/img/studio-mixer.webp)',
+    'background-image': 'url(/assets/img/studio-mixer.webp)',
   };
   private destroy$ = new Subject<void>();
 
@@ -45,16 +45,16 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.backgroundStyle = {
       'background-image':
         url === '/' || url.includes('/home')
-          ? 'url(/img/music-controller.webp)'
+          ? 'url(/assets/img/music-controller.webp)'
           : url.includes('/about')
-          ? 'url(/img/AtmosMixingRoom.webp)'
+          ? 'url(/assets/img/AtmosMixingRoom.webp)'
           : url.includes('/contacts')
-          ? 'url(/img/ptstudio.webp)'
+          ? 'url(/assets/img/ptstudio.webp)'
           : url.includes('/services')
-          ? 'url(/img/keyboard.webp)'
+          ? 'url(/assets/img/keyboard.webp)'
           : url.includes('/form')
-          ? 'url(/img/synthesizer.webp)'
-          : 'url(/img/studio-mixer.webp)',
+          ? 'url(/assets/img/synthesizer.webp)'
+          : 'url(/assets/img/studio-mixer.webp)',
     };
 
     console.log('Applied Background Style:', this.backgroundStyle);

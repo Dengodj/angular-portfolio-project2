@@ -197,6 +197,9 @@
       "confirmPassword": {
         "required": "Password confirmation is required.",
         "mismatch": "Passwords do not match."
+      },
+      "form": {
+        "invalid": "Please correct the errors in the form."
       }
     }
   },

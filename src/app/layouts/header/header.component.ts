@@ -10,7 +10,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { LanguageService } from '../../../languages/language.service';
+import { LanguageService } from '../../languages/language.service';
 import { SearchComponent } from '../../search/search.component';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { HeaderService } from './header.service';
@@ -34,7 +34,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   constructor() {
-    this.translate.setDefaultLang('en');
     this.currentLang = this.languageService.getCurrentLanguage() as
       | 'en'
       | 'ru'

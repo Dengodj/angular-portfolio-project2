@@ -26,13 +26,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/img/music-controller.webp");
+  background-image: url("/assets/img/music-controller.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.8;
   z-index: -1;
-  @include retina-bg(url("/img/music-controller@2x.webp"));
+  @include retina-bg(url("/assets/img/music-controller@2x.webp"));
 }
 
 .content-block {

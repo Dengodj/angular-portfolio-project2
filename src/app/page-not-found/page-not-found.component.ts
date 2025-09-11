@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../../languages/language.service';
+import { LanguageService } from '../languages/language.service';
 import { HeaderService } from '../layouts/header/header.service';
 
 @Component({

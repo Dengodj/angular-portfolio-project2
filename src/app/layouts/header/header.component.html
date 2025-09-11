@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container-header">
       <div class="logo-container">
-        <img src="/img/favicon-32x32.png" alt="Logo" class="logo" />
+        <img src="/assets/img/favicon-32x32.png" alt="Logo" class="logo" />
         <h3 class="logo-text" translate>header.logo</h3>
       </div>
       <app-search
@@ -14,7 +14,7 @@
         class="hamburger"
         role="button"
         [attr.aria-expanded]="isNavActive"
-        [attr.aria-label]="'header.toggleNav' | translate"
+        aria-label="header.toggleNav" i18n-aria-label
         aria-controls="navigation"
         (click)="toggleNav()"
         [class.active]="isNavActive"

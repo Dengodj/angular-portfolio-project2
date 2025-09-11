@@ -8,7 +8,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from '../../../languages/language.service';
+import { LanguageService } from '../../languages/language.service';
 
 @Component({
   selector: 'app-accordion',

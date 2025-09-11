@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../../languages/language.service';
+import { LanguageService } from '../languages/language.service';
 import { FooterComponent } from '../layouts/footer/footer.component';
 import { HeaderComponent } from '../layouts/header/header.component';
 import { HeaderService } from '../layouts/header/header.service';
@@ -48,7 +48,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.headerService.setSearchHidden(true); // Hide search bar
+    this.headerService.setSearchHidden(true);
     this.languageSubscription = this.languageService.currentLang$.subscribe(
       (lang) => {
         this.translate.use(lang);
@@ -57,7 +57,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.headerService.setSearchHidden(false); // Restore search bar
+    this.headerService.setSearchHidden(false);
     this.languageSubscription?.unsubscribe();
   }
 
