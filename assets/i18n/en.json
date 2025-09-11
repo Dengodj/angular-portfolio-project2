@@ -175,6 +175,7 @@
     "submitButton": "Register",
     "submitSuccess": "Registration successful! Welcome to GDStudio.",
     "submitError": "Please fill out all fields correctly.",
+    "successMessage": "Use our services at your convenience!",
     "errors": {
       "username": {
         "required": "Username is required.",
