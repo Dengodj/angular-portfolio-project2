@@ -251,7 +251,12 @@
   }
 
   @include tablet {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  @include mobile {
+    padding-top: 0.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -270,18 +275,18 @@
   border-radius: 4px;
 
   @include qhd {
-    height: 300px;
-    width: 450px;
+    height: 400px;
+    width: 550px;
   }
 
   @include uhd-4k {
-    height: 333px;
-    width: 500px;
+    height: 450px;
+    width: 600px;
   }
 
   @include uhd-5k {
-    height: 367px;
-    width: 550px;
+    height: 500px;
+    width: 650px;
   }
 
   @include macbook-retina {
@@ -317,4 +322,38 @@
 
 .success-image {
   max-width: 80%;
+}
+
+.success-message {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--color-logo);
+  background-color: #13558191;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  padding: 5px 10px;
+
+  @include qhd {
+    font-size: 1.7rem;
+  }
+
+  @include uhd-4k {
+    font-size: 2rem;
+  }
+
+  @include uhd-5k {
+    font-size: 2.2rem;
+  }
+
+  @include macbook-retina {
+    font-size: 1.7rem;
+  }
+
+  @include imac-retina {
+    font-size: 2.2rem;
+  }
+
+  @include tablet {
+    font-size: 1.1rem;
+  }
 }
