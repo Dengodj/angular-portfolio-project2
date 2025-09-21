@@ -22,7 +22,10 @@
               "base": "docs",
               "browser": ""
             },
-            "index": "src/index.html",
+            "index": {
+              "input": "src/index.html",
+              "output": "index.html"
+            },
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
@@ -51,12 +54,31 @@
                 }
               ],
               "outputHashing": "all",
-              "sourceMap": {
-                "scripts": true,
-                "styles": false,
-                "vendor": false
-              },
-              "baseHref": "/angular-portfolio-project2/"
+              "namedChunks": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "baseHref": "/angular-portfolio-project2/",
+              "optimization": true
+            },
+            "netlify": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "512kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kB",
+                  "maximumError": "15kB"
+                }
+              ],
+              "outputHashing": "all",
+              "namedChunks": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "baseHref": "./",
+              "optimization": true
             },
             "local": {
               "budgets": [
@@ -72,40 +94,62 @@
                 }
               ],
               "outputHashing": "all",
+              "namedChunks": false,
+              "extractLicenses": false,
               "sourceMap": {
-                "scripts": true,
-                "styles": false,
-                "vendor": false
+                "scripts": true
               },
-              "baseHref": "/"
+              "baseHref": "./"
             },
             "development": {
               "optimization": false,
               "outputHashing": "none",
-              "sourceMap": {
-                "scripts": true,
-                "styles": true,
-                "vendor": true
-              }
+              "namedChunks": true,
+              "extractLicenses": false,
+              "sourceMap": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-portfolio-project2:build:production"
+              "buildTarget": "angular-portfolio-project2:build:production",
+              "hmr": false
             },
             "development": {
-              "buildTarget": "angular-portfolio-project2:build:development"
+              "buildTarget": "angular-portfolio-project2:build:development",
+              "hmr": true
+            },
+            "netlify": {
+              "buildTarget": "angular-portfolio-project2:build:netlify",
+              "hmr": false
             }
           },
           "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "angular-portfolio-project2:build"
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": []
           }
         }
       }
