@@ -77,7 +77,7 @@
               "namedChunks": false,
               "extractLicenses": false,
               "sourceMap": false,
-              "baseHref": "./",
+              "baseHref": "/",
               "optimization": true
             },
             "local": {
@@ -99,7 +99,7 @@
               "sourceMap": {
                 "scripts": true
               },
-              "baseHref": "./"
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
@@ -124,6 +124,10 @@
             },
             "netlify": {
               "buildTarget": "angular-portfolio-project2:build:netlify",
+              "hmr": false
+            },
+            "local": {
+              "buildTarget": "angular-portfolio-project2:build:local",
               "hmr": false
             }
           },

@@ -12,7 +12,7 @@
     "serve:local": "ng serve --configuration local",
     "serve:production": "ng serve --configuration production",
     "serve:netlify": "ng serve --configuration netlify",
-    "build:prod": "ng build --configuration netlify",
+    "build:prod": "ng build --configuration netlify --base-href / --deploy-url /",
     "build:github": "ng build --configuration production && node scripts/fix-paths.js",
     "build:local": "ng build --configuration local",
     "build:production": "ng build --configuration production",
