@@ -7,13 +7,13 @@ import {
   inject,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { LanguageService } from '@app/languages/language.service';
+import { HeaderService } from '@app/layouts/header/header.service';
+import { NavBarComponent } from '@app/layouts/nav-bar/nav-bar.component';
+import { SearchComponent } from '@app/search/search.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { LanguageService } from '../../languages/language.service';
-import { SearchComponent } from '../../search/search.component';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
-import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',

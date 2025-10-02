@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { LanguageService } from '@app/languages/language.service';
+import { FooterComponent } from '@app/layouts/footer/footer.component';
+import { HeaderComponent } from '@app/layouts/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../languages/language.service';
-import { FooterComponent } from '../layouts/footer/footer.component';
-import { HeaderComponent } from '../layouts/header/header.component';
 
 @Component({
   selector: 'app-services',

@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LanguageService } from '@app/languages/language.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from './languages/language.service';
 
 @Component({
   selector: 'app-root',

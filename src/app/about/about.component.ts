@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FooterComponent } from '@app/layouts/footer/footer.component';
+import { HeaderComponent } from '@app/layouts/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { FooterComponent } from '../layouts/footer/footer.component';
-import { HeaderComponent } from '../layouts/header/header.component';
-import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, TranslateModule, HeaderComponent, FooterComponent, RouterLink],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    HeaderComponent,
+    FooterComponent,
+    RouterLink,
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })

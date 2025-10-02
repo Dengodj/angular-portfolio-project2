@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iridescent-jelly-cf02be.netlify.app/sitemap.xml

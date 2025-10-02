@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { AccordionComponent } from '@app/layouts/accordion/accordion.component';
+import { CarouselComponent } from '@app/layouts/carousel/carousel.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { AccordionComponent } from '../accordion/accordion.component';
-import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
   selector: 'app-main',

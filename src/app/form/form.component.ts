@@ -8,13 +8,13 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { LanguageService } from '@app/languages/language.service';
+import { FooterComponent } from '@app/layouts/footer/footer.component';
+import { HeaderComponent } from '@app/layouts/header/header.component';
+import { HeaderService } from '@app/layouts/header/header.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
-import { LanguageService } from '../languages/language.service';
-import { FooterComponent } from '../layouts/footer/footer.component';
-import { HeaderComponent } from '../layouts/header/header.component';
-import { HeaderService } from '../layouts/header/header.service'; // Updated path
 
 @Component({
   selector: 'app-form',

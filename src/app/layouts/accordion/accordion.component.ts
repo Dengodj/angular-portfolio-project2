@@ -7,8 +7,8 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { LanguageService } from '@app/languages/language.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from '../../languages/language.service';
 
 @Component({
   selector: 'app-accordion',

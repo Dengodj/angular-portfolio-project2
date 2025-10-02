@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { LanguageService } from '@app/languages/language.service';
+import { HeaderService } from '@app/layouts/header/header.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../languages/language.service';
-import { HeaderService } from '../layouts/header/header.service';
 
 @Component({
   selector: 'app-page-not-found',
