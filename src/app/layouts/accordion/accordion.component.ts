@@ -11,11 +11,10 @@ import { LanguageService } from '@app/languages/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-accordion',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss'],
+    selector: 'app-accordion',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './accordion.component.html',
+    styleUrls: ['./accordion.component.scss']
 })
 export class AccordionComponent {
   @ViewChildren('accordionContent')

@@ -14,18 +14,17 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-contacts',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    HeaderComponent,
-    FooterComponent,
-  ],
-  templateUrl: './contacts.component.html',
-  styleUrl: './contacts.component.scss',
+    selector: 'app-contacts',
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        HeaderComponent,
+        FooterComponent,
+    ],
+    templateUrl: './contacts.component.html',
+    styleUrl: './contacts.component.scss'
 })
 export class ContactsComponent implements OnInit, OnDestroy {
   private translate = inject(TranslateService);

@@ -9,12 +9,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-carousel',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-carousel',
+    imports: [CommonModule],
+    templateUrl: './carousel.component.html',
+    styleUrl: './carousel.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent {
   @ViewChild('carouselSlides', { static: false }) carouselSlides?: ElementRef;

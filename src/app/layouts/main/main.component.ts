@@ -5,15 +5,14 @@ import { CarouselComponent } from '@app/layouts/carousel/carousel.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [
-    CommonModule,
-    AccordionComponent,
-    CarouselComponent,
-    TranslateModule,
-  ],
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+    selector: 'app-main',
+    imports: [
+        CommonModule,
+        AccordionComponent,
+        CarouselComponent,
+        TranslateModule,
+    ],
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.scss']
 })
 export class MainComponent {}

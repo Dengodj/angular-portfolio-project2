@@ -17,18 +17,17 @@ import { Observable, Subscription, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-form',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    HeaderComponent,
-    FooterComponent,
-  ],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.scss',
+    selector: 'app-form',
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        HeaderComponent,
+        FooterComponent,
+    ],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.scss'
 })
 export class FormComponent implements OnInit, OnDestroy {
   private translate = inject(TranslateService);

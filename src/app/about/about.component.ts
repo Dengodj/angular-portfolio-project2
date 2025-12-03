@@ -6,17 +6,16 @@ import { HeaderComponent } from '@app/layouts/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslateModule,
-    HeaderComponent,
-    FooterComponent,
-    RouterLink,
-  ],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+    selector: 'app-about',
+    imports: [
+        CommonModule,
+        TranslateModule,
+        HeaderComponent,
+        FooterComponent,
+        RouterLink,
+    ],
+    templateUrl: './about.component.html',
+    styleUrl: './about.component.scss'
 })
 export class AboutComponent {
   @ViewChild('demoVideo') demoVideo!: ElementRef<HTMLVideoElement>;

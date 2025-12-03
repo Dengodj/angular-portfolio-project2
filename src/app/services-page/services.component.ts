@@ -7,11 +7,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, TranslateModule],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.scss',
+    selector: 'app-services',
+    imports: [CommonModule, HeaderComponent, FooterComponent, TranslateModule],
+    templateUrl: './services.component.html',
+    styleUrl: './services.component.scss'
 })
 export class ServicesComponent implements OnInit, OnDestroy {
   isMenuOpen = false;

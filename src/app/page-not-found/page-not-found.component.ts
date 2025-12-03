@@ -6,11 +6,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-page-not-found',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.scss',
+    selector: 'app-page-not-found',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './page-not-found.component.html',
+    styleUrl: './page-not-found.component.scss'
 })
 export class PageNotFoundComponent implements OnInit, OnDestroy {
   private translate = inject(TranslateService);

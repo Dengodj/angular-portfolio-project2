@@ -11,11 +11,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Subject, filter, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+    selector: 'app-footer',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit, OnDestroy {
   backgroundStyle: Record<string, string> = {

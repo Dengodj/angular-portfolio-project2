@@ -20,11 +20,10 @@ interface Product {
 }
 
 @Component({
-  selector: 'app-search',
-  standalone: true,
-  imports: [FormsModule, TranslateModule, CommonModule],
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+    selector: 'app-search',
+    imports: [FormsModule, TranslateModule, CommonModule],
+    templateUrl: './search.component.html',
+    styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnDestroy {
   private _searchTerm = '';

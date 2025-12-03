@@ -5,10 +5,9 @@ import { HeaderComponent } from '@app/layouts/header/header.component';
 import { MainComponent } from '@app/layouts/main/main.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, MainComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+    selector: 'app-home',
+    imports: [CommonModule, HeaderComponent, FooterComponent, MainComponent],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {}
