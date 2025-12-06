@@ -18,7 +18,7 @@ import { Subject, filter, takeUntil } from 'rxjs';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   backgroundStyle: Record<string, string> = {
-    'background-image': 'url(/assets/img/studio-mixer.webp)',
+    'background-image': 'url(assets/img/studio-mixer.webp)',
   };
   private destroy$ = new Subject<void>();
 
@@ -37,6 +37,10 @@ export class FooterComponent implements OnInit, OnDestroy {
         console.log('Current URL:', url);
         this.updateBackgroundStyle(url);
       });
+  }
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 
   private updateBackgroundStyle(url: string): void {

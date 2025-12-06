@@ -20,10 +20,10 @@ interface Product {
 }
 
 @Component({
-    selector: 'app-search',
-    imports: [FormsModule, TranslateModule, CommonModule],
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss']
+  selector: 'app-search',
+  imports: [FormsModule, TranslateModule, CommonModule],
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnDestroy {
   private _searchTerm = '';
@@ -37,7 +37,7 @@ export class SearchComponent implements OnDestroy {
   private products: Product[] = [];
 
   constructor() {
-    this.http.get<Product[]>('/assets/products.json').subscribe({
+    this.http.get<Product[]>('assets/products.json').subscribe({
       next: (products) => {
         this.products = products;
       },

@@ -27,19 +27,54 @@
         <h3 class="footer__nav-title" translate>footer.musicStudioTitle</h3>
         <ul class="footer__list">
           <li class="footer__list-item">
-            <a routerLink="/services" translate>footer.musicStudio.recording</a>
+            <a
+              (click)="navigateTo('/services')"
+              (keydown.enter)="navigateTo('/services')"
+              tabindex="0"
+              role="button"
+              translate
+              >footer.musicStudio.recording</a
+            >
           </li>
           <li class="footer__list-item">
-            <a routerLink="/services" translate>footer.musicStudio.mastering</a>
+            <a
+              (click)="navigateTo('/services')"
+              (keydown.enter)="navigateTo('/services')"
+              tabindex="0"
+              role="button"
+              translate
+              >footer.musicStudio.mastering</a
+            >
           </li>
           <li class="footer__list-item">
-            <a routerLink="/services" translate>footer.musicStudio.soundFX</a>
+            <a
+              (click)="navigateTo('/services')"
+              (keydown.enter)="navigateTo('/services')"
+              tabindex="0"
+              role="button"
+              translate
+              >footer.musicStudio.soundFX</a
+            >
           </li>
           <li class="footer__list-item">
-            <a routerLink="/services" translate>footer.musicStudio.gameFX</a>
+            <a
+              (click)="navigateTo('/services')"
+              (keydown.enter)="navigateTo('/services')"
+              tabindex="0"
+              role="button"
+              translate
+              >footer.musicStudio.gameFX</a
+            >
           </li>
           <li class="footer__list-item">
-            <a routerLink="/about" translate>footer.musicStudio.all</a>
+            <a
+              (click)="navigateTo('/about')"
+              (keydown.enter)="navigateTo('/about')"
+              tabindex="0"
+              role="button"
+              translate
+              >footer.musicStudio.all</a
+            >
           </li>
         </ul>
       </nav>
