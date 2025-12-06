@@ -80,7 +80,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('document:keydown.escape', ['$event'])
+  @HostListener('document:keydown.escape')
   onEscapePress(): void {
     this.closeNav();
   }

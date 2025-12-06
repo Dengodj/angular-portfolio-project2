@@ -7,10 +7,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'app-services',
-    imports: [CommonModule, HeaderComponent, FooterComponent, TranslateModule],
-    templateUrl: './services.component.html',
-    styleUrl: './services.component.scss'
+  selector: 'app-services',
+  imports: [CommonModule, HeaderComponent, FooterComponent, TranslateModule],
+  templateUrl: './services.component.html',
+  styleUrl: './services.component.scss',
 })
 export class ServicesComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
@@ -31,14 +31,14 @@ export class ServicesComponent implements OnInit, OnDestroy {
   ];
 
   images: { src: string; alt: string }[] = [
-    { src: '/assets/img/digital-audio.webp', alt: 'services.recording.title' },
-    { src: '/assets/img/DAstudio.webp', alt: 'services.mastering.title' },
+    { src: 'assets/img/digital-audio.webp', alt: 'services.recording.title' },
+    { src: 'assets/img/DAstudio.webp', alt: 'services.mastering.title' },
     {
-      src: '/assets/img/Dolby-Atmos-renderer.webp',
+      src: 'assets/img/Dolby-Atmos-renderer.webp',
       alt: 'services.sound_effects.title',
     },
     {
-      src: '/assets/img/shadow-of-tomb.webp',
+      src: 'assets/img/shadow-of-tomb.webp',
       alt: 'services.video_game_effects.title',
     },
   ];

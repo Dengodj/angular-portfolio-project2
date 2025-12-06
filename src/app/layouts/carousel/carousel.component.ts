@@ -9,30 +9,30 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'app-carousel',
-    imports: [CommonModule],
-    templateUrl: './carousel.component.html',
-    styleUrl: './carousel.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-carousel',
+  imports: [CommonModule],
+  templateUrl: './carousel.component.html',
+  styleUrl: './carousel.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CarouselComponent {
   @ViewChild('carouselSlides', { static: false }) carouselSlides?: ElementRef;
 
   slides = [
-    { imageUrl: '/assets/img/headphones.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/NUAGE.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/headphones.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/NUAGE.webp', loaded: false, error: false },
     {
-      imageUrl: '/assets/img/music-controller.webp',
+      imageUrl: 'assets/img/music-controller.webp',
       loaded: false,
       error: false,
     },
-    { imageUrl: '/assets/img/nuage-console.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/mic.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/digital-audio.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/faders.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/keyboard.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/ptstudio.webp', loaded: false, error: false },
-    { imageUrl: '/assets/img/synthesizer.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/nuage-console.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/mic.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/digital-audio.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/faders.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/keyboard.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/ptstudio.webp', loaded: false, error: false },
+    { imageUrl: 'assets/img/synthesizer.webp', loaded: false, error: false },
   ];
   activeSlideIndex = 0;
 

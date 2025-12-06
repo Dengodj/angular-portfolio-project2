@@ -11,10 +11,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Subject, filter, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'app-footer',
-    imports: [CommonModule, TranslateModule],
-    templateUrl: './footer.component.html',
-    styleUrl: './footer.component.scss'
+  selector: 'app-footer',
+  imports: [CommonModule, TranslateModule],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit, OnDestroy {
   backgroundStyle: Record<string, string> = {
@@ -44,16 +44,16 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.backgroundStyle = {
       'background-image':
         url === '/' || url.includes('/home')
-          ? 'url(/assets/img/music-controller.webp)'
+          ? 'url(assets/img/music-controller.webp)'
           : url.includes('/about')
-          ? 'url(/assets/img/AtmosMixingRoom.webp)'
+          ? 'url(assets/img/AtmosMixingRoom.webp)'
           : url.includes('/contacts')
-          ? 'url(/assets/img/ptstudio.webp)'
+          ? 'url(assets/img/ptstudio.webp)'
           : url.includes('/services')
-          ? 'url(/assets/img/keyboard.webp)'
+          ? 'url(assets/img/keyboard.webp)'
           : url.includes('/form')
-          ? 'url(/assets/img/synthesizer.webp)'
-          : 'url(/assets/img/studio-mixer.webp)',
+          ? 'url(assets/img/synthesizer.webp)'
+          : 'url(assets/img/studio-mixer.webp)',
     };
 
     console.log('Applied Background Style:', this.backgroundStyle);
@@ -73,7 +73,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     const topButton = document.querySelector('.top');
     if (topButton) {
