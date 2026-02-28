@@ -18,15 +18,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
-            "index": {
-              "input": "src/index.html",
-              "output": "index.html"
+            "outputPath": {
+              "base": "docs",
+              "browser": ""
             },
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/mixins", "src/styles"]
+            },
             "assets": [
               "src/assets",
               "src/assets/i18n",
@@ -36,7 +39,7 @@
             ],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "baseHref": "/"
+            "baseHref": "/angular-portfolio-project2/"
           },
           "configurations": {
             "production": {
@@ -48,19 +51,14 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "10kB",
-                  "maximumError": "15kB"
+                  "maximumWarning": "20kB",
+                  "maximumError": "30kB"
                 }
               ],
               "outputHashing": "all",
-              "namedChunks": false,
-              "extractLicenses": false,
+              "optimization": true,
+              "extractLicenses": true,
               "sourceMap": false,
-              "optimization": {
-                "scripts": true,
-                "styles": { "minify": true, "inlineCritical": true },
-                "fonts": true
-              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -70,64 +68,8 @@
             },
             "development": {
               "optimization": false,
-              "outputHashing": "none",
-              "namedChunks": true,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "netlify": {
-              "outputPath": "docs",
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "512kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "10kB",
-                  "maximumError": "15kB"
-                }
-              ],
-              "outputHashing": "all",
-              "namedChunks": false,
-              "extractLicenses": false,
-              "sourceMap": false,
-              "optimization": {
-                "scripts": true,
-                "styles": { "minify": true, "inlineCritical": true },
-                "fonts": true
-              },
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "local": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "512kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "10kB",
-                  "maximumError": "15kB"
-                }
-              ],
-              "outputHashing": "all",
-              "namedChunks": false,
-              "extractLicenses": false,
-              "sourceMap": { "scripts": true },
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
             }
           },
           "defaultConfiguration": "production"
@@ -136,48 +78,19 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-portfolio-project2:build:production",
-              "hmr": false
+              "buildTarget": "angular-portfolio-project2:build:production"
             },
             "development": {
               "buildTarget": "angular-portfolio-project2:build:development",
               "hmr": true
-            },
-            "netlify": {
-              "buildTarget": "angular-portfolio-project2:build:netlify",
-              "hmr": false
-            },
-            "local": {
-              "buildTarget": "angular-portfolio-project2:build:local",
-              "hmr": false
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": { "buildTarget": "angular-portfolio-project2:build" }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": { "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"] }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": []
-          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false,
-    "schematicCollections": ["angular-eslint"]
+    "analytics": false
   }
 }

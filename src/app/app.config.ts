@@ -1,7 +1,15 @@
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withInMemoryScrolling,
+} from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
@@ -12,9 +20,18 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideHttpClient(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+
+    provideRouter(
+      routes,
+      withComponentInputBinding(),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
+    ),
+
+    provideHttpClient(withFetch()),
+
     provideClientHydration(),
+
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -24,7 +41,7 @@ export const appConfig: ApplicationConfig = {
         },
         defaultLanguage: 'en',
         useDefaultLang: true,
-      })
+      }),
     ),
   ],
 };

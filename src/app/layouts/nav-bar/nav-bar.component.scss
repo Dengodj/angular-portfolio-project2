@@ -1,4 +1,4 @@
-@import "../../../mixins/mixins.scss";
+@use "mixins" as m;
 
 #navigation {
   display: flex;
@@ -6,130 +6,144 @@
   align-items: center;
   padding: 10px 15px;
 
-  @include mobile() {
+  @include m.mobile {
     display: none;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    right: 15px;
+    background-color: rgba(13, 27, 57, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border: 1px solid rgba(0, 214, 201, 0.15);
+    border-radius: 8px;
+    z-index: 1000;
+
+    // Animation
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     &.active {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      position: absolute;
-      top: 50px;
-      left: 10px;
-      right: 10px;
-      background-color: #2f2f31e0;
-      backdrop-filter: blur(4px);
-      padding: 15px;
-      border: 1px solid #e5861186;
-      z-index: 1000;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      gap: 12px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+  }
 
-      &.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @include m.landscape {
+    &.active {
+      top: 50px;
+      padding: 10px;
+      gap: 8px;
+      max-height: 80vh;
+      overflow-y: auto;
     }
   }
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 
-  @include mobile() {
+  @include m.mobile {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  @include m.landscape {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
 }
 
 .button {
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 6px 12px;
+  font-family: var(--font-cards);
+  font-size: 0.75rem;
   text-decoration: none;
-  color: var(--color-logo);
-  font-size: 0.9rem;
-  transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
+  color: var(--text-main);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
 
-  @include mobile() {
-    font-size: 0.9rem;
-    padding: 5px 8px;
+  &:hover {
+    color: var(--ui-turquoise);
+    transform: translateY(-1px);
   }
 
   &.active {
-    border-bottom: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    font-weight: 200;
+    color: var(--ui-turquoise);
+    border-bottom: 1px solid var(--color-accent);
+    font-weight: 400;
 
-    @include mobile() {
-      border-bottom: 1px solid var(--color-accent);
-      color: #e58411;
+    @include m.mobile {
+      background-color: rgba(0, 214, 201, 0.08);
+      border-radius: 4px;
     }
   }
 
-  &:hover {
-    color: var(--color-accent);
+  @include m.mobile {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
 
-@include qhd {
-  #navigation {
-    padding: 15px 30px;
-  }
+// ADAPTIVITY
 
-  .nav-links {
-    gap: 30px;
-  }
-
-  .button {
-    font-size: 1.1rem;
-    padding: 8px 15px;
-  }
-}
-
-@include uhd-4k {
-  #navigation {
-    padding: 20px 40px;
-  }
-
-  .nav-links {
-    gap: 40px;
-  }
-
-  .button {
-    font-size: 1.3rem;
-    padding: 10px 20px;
-  }
-}
-
-@include uhd-5k {
-  #navigation {
-    padding: 25px 50px;
-  }
-
-  .nav-links {
-    gap: 50px;
-  }
-
-  .button {
-    font-size: 1.5rem;
-    padding: 12px 25px;
-  }
-}
-
-@include tablet {
+@include m.tablet {
   #navigation {
     padding: 10px 20px;
   }
-
   .nav-links {
     gap: 15px;
   }
+  .button {
+    font-size: 0.9rem;
+  }
+}
 
+@include m.qhd {
+  #navigation {
+    padding: 15px 30px;
+  }
+  .nav-links {
+    gap: 35px;
+  }
   .button {
     font-size: 1rem;
-    padding: 6px 12px;
+    padding: 10px 20px;
+  }
+}
+
+@include m.uhd-4k {
+  #navigation {
+    padding: 25px 50px;
+  }
+  .nav-links {
+    gap: 50px;
+  }
+  .button {
+    font-size: 1.4rem;
+    padding: 15px 30px;
   }
 }

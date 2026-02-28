@@ -173,9 +173,10 @@
     "confirmPasswordLabel": "Confirm Password",
     "confirmPasswordPlaceholder": "Confirm your password",
     "submitButton": "Register",
-    "submitSuccess": "Registration successful! Welcome to GDStudio.",
+    "submitSuccessTitle": "Registration successful!",
     "submitError": "Please fill out all fields correctly.",
     "successMessage": "Use our services at your convenience!",
+    "backToHome": "Back to Home",
     "errors": {
       "username": {
         "required": "Username is required.",
@@ -184,7 +185,7 @@
       },
       "phone": {
         "required": "Phone number is required.",
-        "minlength": "Phone number must be at least 10 characters long."
+        "invalid": "Invalid phone format (min 10 digits)."
       },
       "email": {
         "required": "Email is required.",
@@ -206,7 +207,8 @@
   },
   "pageNotFound": {
     "title": "404 - Page Not Found",
-    "message": "Sorry, the page you are looking for does not exist."
+    "message": "Oops! The page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to Home"
   },
   "search": {
     "noResults": "No products found matching your search.",

@@ -1,172 +1,158 @@
 <footer class="footer">
   <div class="container">
-    <div class="footer__grid">
-      <div class="footer__desc" [ngStyle]="backgroundStyle">
-        <div class="footer__logo">
-          <p class="footer-logo_text" translate>footer.logo</p>
+    <div class="container-footer">
+      <div class="footer__grid">
+        <div class="footer__desc" [ngStyle]="backgroundStyle">
+          <div class="footer__logo">
+            <p class="footer-logo_text" translate>footer.logo</p>
+          </div>
+          <p class="footer-infotext" translate>footer.infoText</p>
         </div>
-        <p class="footer-infotext" translate>footer.infoText</p>
-      </div>
 
-      <nav class="footer__nav footer__nav--services">
-        <h3 class="footer__nav-title" translate>footer.servicesTitle</h3>
-        <ul class="footer__list">
-          <li class="footer__list-item">
-            <a href="#!" translate>footer.services.emailMarketing</a>
-          </li>
-          <li class="footer__list-item">
-            <a href="#!" translate>footer.services.campaigns</a>
-          </li>
-          <li class="footer__list-item">
-            <a href="#!" translate>footer.services.branding</a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="footer__nav">
+          <h3 class="footer__nav-title" translate>footer.servicesTitle</h3>
+          <ul class="footer__list">
+            <li><a href="#!" translate>footer.services.emailMarketing</a></li>
+            <li><a href="#!" translate>footer.services.campaigns</a></li>
+            <li><a href="#!" translate>footer.services.branding</a></li>
+          </ul>
+        </nav>
 
-      <nav class="footer__nav__nav--music">
-        <h3 class="footer__nav-title" translate>footer.musicStudioTitle</h3>
-        <ul class="footer__list">
-          <li class="footer__list-item">
-            <a
-              (click)="navigateTo('/services')"
-              (keydown.enter)="navigateTo('/services')"
-              tabindex="0"
-              role="button"
-              translate
-              >footer.musicStudio.recording</a
-            >
-          </li>
-          <li class="footer__list-item">
-            <a
-              (click)="navigateTo('/services')"
-              (keydown.enter)="navigateTo('/services')"
-              tabindex="0"
-              role="button"
-              translate
-              >footer.musicStudio.mastering</a
-            >
-          </li>
-          <li class="footer__list-item">
-            <a
-              (click)="navigateTo('/services')"
-              (keydown.enter)="navigateTo('/services')"
-              tabindex="0"
-              role="button"
-              translate
-              >footer.musicStudio.soundFX</a
-            >
-          </li>
-          <li class="footer__list-item">
-            <a
-              (click)="navigateTo('/services')"
-              (keydown.enter)="navigateTo('/services')"
-              tabindex="0"
-              role="button"
-              translate
-              >footer.musicStudio.gameFX</a
-            >
-          </li>
-          <li class="footer__list-item">
-            <a
-              (click)="navigateTo('/about')"
-              (keydown.enter)="navigateTo('/about')"
-              tabindex="0"
-              role="button"
-              translate
-              >footer.musicStudio.all</a
-            >
-          </li>
-        </ul>
-      </nav>
+        <nav class="footer__nav">
+          <h3 class="footer__nav-title" translate>footer.musicStudioTitle</h3>
+          <ul class="footer__list">
+            <li>
+              <a routerLink="/services" translate
+                >footer.musicStudio.recording</a
+              >
+            </li>
+            <li>
+              <a routerLink="/services" translate
+                >footer.musicStudio.mastering</a
+              >
+            </li>
+            <li>
+              <a routerLink="/services" translate>footer.musicStudio.soundFX</a>
+            </li>
+            <li>
+              <a routerLink="/services" translate>footer.musicStudio.gameFX</a>
+            </li>
+            <li><a routerLink="/about" translate>footer.musicStudio.all</a></li>
+          </ul>
+        </nav>
 
-      <nav class="footer__nav__nav--we">
-        <h3 class="footer__nav-title" translate>footer.weAreHereTitle</h3>
-        <ul class="footer__list">
-          <li class="footer__list-item">
-            <a
-              href="https://www.youtube.com/channel/UCLf1muwoNyQdviQcg2YjzpQ"
-              target="_blank"
-              translate
-            >
-              footer.weAreHere.youtube
-            </a>
-          </li>
-          <li class="footer__list-item">
-            <a href="https://www.instagram.com/p/DG8Zx8ZCfSH/" translate>
-              footer.weAreHere.instagram
-            </a>
-          </li>
-          <li class="footer__list-item">
-            <a href="https://www.facebook.com/reel/985567476855181" translate>
-              footer.weAreHere.facebook
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="footer__nav">
+          <h3 class="footer__nav-title" translate>footer.weAreHereTitle</h3>
+          <ul class="footer__list">
+            <li>
+              <a href="https://www.youtube.com/..." target="_blank" translate
+                >footer.weAreHere.youtube</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/..." target="_blank" translate
+                >footer.weAreHere.instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com/..." target="_blank" translate
+                >footer.weAreHere.facebook</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-      <div class="top">
-        <div class="dot-container">
+        <div class="top">
           <a
             (click)="scrollToTop()"
             (keydown.enter)="scrollToTop()"
-            (keydown.space)="scrollToTop()"
             tabindex="0"
             role="button"
-            class="info-dot info-dot--animated"
+            class="info-dot"
             [attr.aria-label]="'footer.backToTop' | translate"
           >
-            <span class="info-dot__circle"></span>
+            <span class="particle p1"></span>
+            <span class="particle p2"></span>
+            <span class="particle p3"></span>
+            <span class="particle p4"></span>
+
+            <div class="info-dot__circle">
+              <svg
+                class="arrow-up"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="12"
+                  y1="19"
+                  x2="12"
+                  y2="5"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M5 12L12 5L19 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+
             <span class="info-dot__ring info-dot__ring--outer"></span>
             <span class="info-dot__ring info-dot__ring--middle"></span>
             <span class="info-dot__ring info-dot__ring--inner"></span>
           </a>
         </div>
       </div>
-    </div>
 
-    <div class="container-footer">
-      <a class="github-link" href="https://github.com/Dengodj" translate>
-        footer.social.github
-        <img
-          src="assets/img/github2.png"
-          alt="GitHub Icon"
-          class="github-icon"
-        />
-      </a>
-      <a
-        class="mixcloud-link"
-        href="https://www.mixcloud.com/genres/power-of-relax/"
-        translate
-      >
-        footer.social.mixcloud
-        <img
-          src="assets/img/mixcloud.png"
-          alt="MixCloud Icon"
-          class="mixcloud-icon"
-        />
-      </a>
-      <a
-        class="soundcloud-link"
-        href="https://soundcloud.com/denis-gojda-910152141"
-        translate
-      >
-        footer.social.soundcloud
-        <img
-          src="assets/img/soundcloud2.png"
-          alt="SoundCloud Icon"
-          class="soundcloud-icon"
-        />
-      </a>
-    </div>
-
-    <div class="footer__row">
-      <div class="footer__copyright">
-        <p class="footer-text" translate>footer.copyright</p>
+      <div class="footer__social-row">
+        <a
+          class="github-link"
+          href="https://github.com/Dengodj"
+          target="_blank"
+        >
+          <span translate>footer.social.github</span>
+          <img src="assets/img/github2.png" alt="GitHub" class="github-icon" />
+        </a>
+        <a
+          class="mixcloud-link"
+          href="https://www.mixcloud.com/denis-goida/burn-residency-2017-dj-dengodjdenis-goida/"
+          target="_blank"
+        >
+          <span translate>footer.social.mixcloud</span>
+          <img
+            src="assets/img/mixcloud.png"
+            alt="MixCloud"
+            class="mixcloud-icon"
+          />
+        </a>
+        <a
+          class="soundcloud-link"
+          href="https://soundcloud.com/denis-gojda-910152141"
+          target="_blank"
+        >
+          <span translate>footer.social.soundcloud</span>
+          <img
+            src="assets/img/soundcloud2.png"
+            alt="SoundCloud"
+            class="soundcloud-icon"
+          />
+        </a>
       </div>
-      <div class="author" translate>footer.author</div>
-      <div class="footer__links">
-        <a href="#!" translate>footer.links.terms</a>
-        <a href="#!" translate>footer.links.privacy</a>
+
+      <div class="footer__bottom-row">
+        <div class="footer__copyright">
+          <p translate>footer.copyright</p>
+        </div>
+        <div class="author" translate>footer.author</div>
+        <div class="footer__secondary-links">
+          <a href="#!" translate>footer.links.terms</a>
+          <a href="#!" translate>footer.links.privacy</a>
+        </div>
       </div>
     </div>
   </div>

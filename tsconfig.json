@@ -20,16 +20,21 @@
     "lib": ["ES2022", "dom"],
     "baseUrl": "src",
     "paths": {
-      "@environments/*": ["environments/*"],
-      "@app/*": ["app/*"]
+      "@env/*": ["environments/*"],
+      "@app/*": ["app/*"],
+      "@layouts/*": ["app/layouts/*"],
+      "@pages/*": ["app/pages/*"],
+      "@mixins/*": ["mixins/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "preserveWhitespaces": false
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "docs"]
 }

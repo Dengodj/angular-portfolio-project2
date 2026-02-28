@@ -6,22 +6,24 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Subject, filter, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, TranslateModule],
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit, OnDestroy {
-  backgroundStyle: Record<string, string> = {
+  
+  public backgroundStyle: Record<string, string> = {
     'background-image': 'url(assets/img/studio-mixer.webp)',
   };
-  private destroy$ = new Subject<void>();
 
+  private destroy$ = new Subject<void>();
   private router = inject(Router);
 
   ngOnInit(): void {
@@ -30,62 +32,58 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((event: NavigationEnd) => {
-        const url = event.urlAfterRedirects;
-        console.log('Current URL:', url);
-        this.updateBackgroundStyle(url);
+        this.updateBackgroundStyle(event.urlAfterRedirects);
       });
   }
 
-  navigateTo(route: string): void {
+  public navigateTo(route: string): void {
     this.router.navigate([route]);
   }
 
   private updateBackgroundStyle(url: string): void {
-    console.log('Updating background for URL:', url);
-    this.backgroundStyle = {
-      'background-image':
-        url === '/' || url.includes('/home')
-          ? 'url(assets/img/music-controller.webp)'
-          : url.includes('/about')
-          ? 'url(assets/img/AtmosMixingRoom.webp)'
-          : url.includes('/contacts')
-          ? 'url(assets/img/ptstudio.webp)'
-          : url.includes('/services')
-          ? 'url(assets/img/keyboard.webp)'
-          : url.includes('/form')
-          ? 'url(assets/img/synthesizer.webp)'
-          : 'url(assets/img/studio-mixer.webp)',
-    };
+    let bgImage = 'studio-mixer.webp';
 
-    console.log('Applied Background Style:', this.backgroundStyle);
+    if (url === '/' || url.includes('/home')) bgImage = 'music-controller.webp';
+    else if (url.includes('/about')) bgImage = 'AtmosMixingRoom.webp';
+    else if (url.includes('/contacts')) bgImage = 'ptstudio.webp';
+    else if (url.includes('/services')) bgImage = 'keyboard.webp';
+    else if (url.includes('/form')) bgImage = 'synthesizer.webp';
+
+    this.backgroundStyle = {
+      'background-image': `url(assets/img/${bgImage})`,
+    };
   }
 
-  scrollToTop(): void {
-    const header = document.querySelector('#header');
-    if (header) {
-      header.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  public scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrollOffset =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    const topButton = document.querySelector('.top');
+
+    if (topButton) {
+      if (scrollOffset > 400) {
+        topButton.classList.add('top--visible');
+      } else {
+        topButton.classList.remove('top--visible');
+      }
     }
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    const topButton = document.querySelector('.top');
-    if (topButton) {
-      if (window.scrollY > 100) {
-        topButton.classList.add('top--visible');
-      } else {
-        topButton.classList.remove('top--visible');
-      }
-    }
   }
 }

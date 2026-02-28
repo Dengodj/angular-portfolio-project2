@@ -1,37 +1,163 @@
-@import "../../mixins/mixins.scss";
+@use "mixins" as m;
+
+.container-404 {
+  background-color: var(--color-background);
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--ui-turquoise);
+    filter: blur(150px);
+    opacity: 0.1;
+    z-index: 0;
+  }
+}
 
 .not-found-section {
+  z-index: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.glass-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 120px);
-  padding: 2rem;
+  padding: 3rem;
+  background-color: rgba(81, 76, 114, 0.603);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   text-align: center;
 }
 
 .not-found-title {
-  font-size: 2.5rem;
+  font-family: var(--font-main);
+  font-size: 3rem;
+  font-weight: 400;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: #0d1b39;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: font-size 0.3s ease;
+
+  @include m.qhd {
+    font-size: 4rem;
+  }
+  @include m.uhd-4k {
+    font-size: 8rem;
+  }
 }
 
 .error-message {
-  color: var(--title-color1);
+  font-family: var(--font-cards);
+  color: var(--text-main);
   font-size: 1.25rem;
-  max-width: 600px;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
 }
 
-@media (max-width: 768px) {
+.back-home-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #0d1b39b9;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #0d1b39;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 214, 201, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@include m.tablet {
+  .glass-panel {
+    padding: 2.5rem 1.5rem;
+  }
+  .not-found-title {
+    font-size: 3.5rem;
+  }
+  .error-message {
+    font-size: 1.1rem;
+  }
+}
+
+@include m.mobile {
   .not-found-section {
     padding: 1rem;
   }
-
-  .not-found-title {
-    font-size: 2rem;
+  .glass-panel {
+    padding: 2rem 1rem;
+    border-radius: 8px;
   }
-
+  .not-found-title {
+    font-size: 3rem;
+  }
   .error-message {
     font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .back-home-btn {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@include m.landscape {
+  .container-404 {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  .glass-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  .not-found-title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .error-message {
+    margin: 0;
+    text-align: left;
+    flex: 1;
+  }
+  .back-home-btn {
+    width: auto;
   }
 }

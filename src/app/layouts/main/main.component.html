@@ -2,6 +2,7 @@
   <main class="main-page-home">
     <div class="main-container">
       <h1 class="main-title" translate>main.title</h1>
+
       <div class="content-block">
         <p
           class="main-description"
@@ -12,7 +13,9 @@
           [innerHTML]="'main.description2' | translate"
         ></p>
       </div>
+
       <h2 class="block-title" translate>main.exploreTitle</h2>
+
       <div class="content-block">
         <p
           class="main-description"
@@ -23,7 +26,14 @@
           [innerHTML]="'main.exploreDescription2' | translate"
         ></p>
       </div>
-      <app-carousel></app-carousel>
+
+      @defer (on idle) {
+        <app-carousel></app-carousel>
+      } @placeholder (minimum 800ms) {
+        <div class="carousel-skeleton">
+          <div class="shimmer"></div>
+        </div>
+      }
     </div>
   </main>
   <app-accordion></app-accordion>

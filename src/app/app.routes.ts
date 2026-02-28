@@ -1,4 +1,3 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { AboutComponent } from '@app/about/about.component';
 import { ContactsComponent } from '@app/contacts/contacts.component';
@@ -8,11 +7,36 @@ import { PageNotFoundComponent } from '@app/page-not-found/page-not-found.compon
 import { ServicesComponent } from '@app/services-page/services.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contacts', component: ContactsComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'form', component: FormComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+  {
+    path: 'home',
+    component: HomeComponent,
+    title: 'DGStudio | Home',
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+    title: 'About Us | DGStudio',
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent,
+    title: 'Contact | DGStudio',
+  },
+  {
+    path: 'services',
+    component: ServicesComponent,
+    title: 'Our Services | DGStudio',
+  },
+  {
+    path: 'form',
+    component: FormComponent,
+    title: 'Registration | DGStudio',
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+    title: '404 - Not Found',
+  },
 ];

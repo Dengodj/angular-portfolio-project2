@@ -1,12 +1,15 @@
-@import "../../../mixins/mixins.scss";
+@use "mixins" as m;
 
 .accordion {
   max-width: 1680px;
   margin: 0 auto;
+  background-color: rgba(230, 230, 217, 0.37);
+  padding-top: 40px 0;
+  font-family: var(--font-main);
 
-  @include mobile() {
+  @include m.mobile {
     max-width: 92%;
-    padding: 0 20px;
+    padding: 20px 15px;
 
     .accordion-description {
       margin-left: 2px;
@@ -16,23 +19,27 @@
   }
 }
 
-.accordion {
-  background-color: #e6e6d95e;
-  padding-top: 20px;
-}
-
 .accordion-description {
-  margin-top: 4px;
-  margin-left: 14px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  margin-left: 15px;
   color: var(--text-color);
-  font-size: 1.15em;
+  font-family: var(--font-cards);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6;
+
   text-align: left;
   white-space: pre-line;
+
+  @include m.mobile {
+    margin-left: 5px;
+    font-size: 0.9rem;
+  }
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--color-primary);
-  overflow: hidden;
+  margin-bottom: 1px;
 }
 
 .accordion-header {
@@ -41,50 +48,69 @@
   align-items: center;
   cursor: pointer;
   width: 100%;
-  padding: 15px;
-  background-color: #151b2bb2;
+  padding: 20px 25px;
+  background-color: rgba(21, 27, 43, 0.8);
   border: none;
-  cursor: pointer;
   text-align: left;
-  font-size: 0.8rem;
-  color: var(--color-logo);
-  transition: background-color 0.3s ease;
-}
 
-.accordion-header:hover {
-  background-color: #353333b4;
+  font-family: var(--font-footer-accent);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(35, 42, 60, 0.9);
+    padding-left: 30px;
+  }
+
+  &::after {
+    content: "\25BC";
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+  }
+
+  &.active {
+    background-color: rgba(24, 23, 23, 0.815);
+    color: #f6973f;
+
+    &::after {
+      color: var(--ui-turquoise);
+      transform: rotate(180deg);
+      font-size: 1.25rem;
+    }
+  }
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 15px;
-  background-color: #e6e6d95e;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(255, 255, 255, 0.03);
+
+  &.active {
+    max-height: 2000px;
+    padding: 20px 15px;
+  }
+
+  p {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0;
+
+    & + p {
+      margin-top: 15px;
+    }
+  }
 }
 
-.accordion-content.active {
-  max-height: var(--content-height);
-  padding: 15px;
-}
+// Adaptability
 
-.accordion-header::after {
-  content: "\25BC"; /* Down arrow (Unicode) */
-  font-size: 0.8rem;
-}
-
-.accordion-header.active::after {
-  content: "\25B2";
-}
-
-.accordion-content p {
-  padding-top: 5px;
-  padding-bottom: 15px;
-  font-size: 0.85em;
-}
-
-/* 2K/QHD (2560x1440) */
-@include qhd {
+@include m.qhd {
   .accordion {
     max-width: 2000px;
     padding-top: 30px;
@@ -96,17 +122,16 @@
   .accordion-header {
     font-size: 1.1rem;
     padding: 20px;
-  }
-  .accordion-header::after {
-    font-size: 1.1rem;
+    &::after {
+      font-size: 1.1rem;
+    }
   }
   .accordion-content p {
     font-size: 1.1rem;
   }
 }
 
-/* 4K (3840x2160) */
-@include uhd-4k {
+@include m.uhd-4k {
   .accordion {
     max-width: 2400px;
     padding-top: 35px;
@@ -118,17 +143,16 @@
   .accordion-header {
     font-size: 1.2rem;
     padding: 22px;
-  }
-  .accordion-header::after {
-    font-size: 1.2rem;
+    &::after {
+      font-size: 1.2rem;
+    }
   }
   .accordion-content p {
     font-size: 1.2rem;
   }
 }
 
-/* 5K (5120x2880) */
-@include uhd-5k {
+@include m.uhd-5k {
   .accordion {
     max-width: 3000px;
     padding-top: 40px;
@@ -140,65 +164,32 @@
   .accordion-header {
     font-size: 1.3rem;
     padding: 24px;
-  }
-  .accordion-header::after {
-    font-size: 1.3rem;
+    &::after {
+      font-size: 1.3rem;
+    }
   }
   .accordion-content p {
     font-size: 1.3rem;
   }
 }
 
-/* Apple MacBook Retina (2560x1600, 2880x1800) */
-@include macbook-retina {
+@include m.retina-display {
   .accordion {
-    max-width: 2200px;
+    max-width: 2600px;
     padding-top: 30px;
   }
   .accordion-description {
     font-size: 1.4em;
-    margin-left: 20px;
   }
   .accordion-header {
-    font-size: 1.1rem;
-    padding: 20px;
-  }
-  .accordion-header::after {
-    font-size: 1.1rem;
-  }
-  .accordion-content p {
     font-size: 1.1rem;
   }
 }
 
-/* Apple iMac Retina 4.5K/5K (4480x2520, 5120x2880) */
-@include imac-retina {
-  .accordion {
-    max-width: 3000px;
-    padding-top: 40px;
-  }
-  .accordion-description {
-    font-size: 1.6em;
-    margin-left: 24px;
-  }
-  .accordion-header {
-    font-size: 1.3rem;
-    padding: 24px;
-  }
-  .accordion-header::after {
-    font-size: 1.3rem;
-  }
-  .accordion-content p {
-    font-size: 1.3rem;
-  }
-}
-
-/* Tablets (768px–1024px) */
-@include tablet {
+@include m.tablet {
   .accordion {
     max-width: 740px;
-    padding: 0 15px;
-    padding-top: 15px;
+    padding: 15px 15px 0;
   }
   .accordion-description {
     font-size: 1em;
@@ -207,12 +198,35 @@
   .accordion-header {
     font-size: 0.9rem;
     padding: 12px;
-  }
-  .accordion-header::after {
-    font-size: 0.9rem;
+    &::after {
+      font-size: 0.9rem;
+    }
   }
   .accordion-content p {
     font-size: 0.9rem;
     padding-bottom: 12px;
+  }
+}
+
+// Landscape
+@include m.landscape {
+  .accordion {
+    max-width: 95%;
+    padding-top: 10px;
+  }
+
+  .accordion-header {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+
+  .accordion-description {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .accordion-content p {
+    font-size: 0.8rem;
+    padding-bottom: 8px;
   }
 }

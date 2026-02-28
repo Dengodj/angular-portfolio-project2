@@ -1,288 +1,250 @@
-@import "../../mixins/mixins.scss";
+@use "sass:math";
+@use "mixins" as m;
+
+// Keyframes
+@keyframes titleEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+$contact-glass-bg: rgba(255, 255, 255, 0.03);
+$contact-border: 1px solid rgba(255, 255, 255, 0.1);
 
 .section-contacts {
   margin: 0 auto;
-  padding: 40px 15px;
-  background-color: var(--color-background);
+  padding: clamp(20px, 5vh, 80px) 15px;
+  width: 100%;
+  max-width: 100%;
+  background-image: url(assets/img/mic.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 
-  @include qhd {
-    max-width: 1800px;
-  }
-
-  @include uhd-4k {
-    max-width: 2400px;
-  }
-
-  @include uhd-5k {
-    max-width: 3000px;
-  }
-
-  @include macbook-retina {
-    max-width: 2000px;
-  }
-
-  @include imac-retina {
-    max-width: 3000px;
-  }
-
-  @include desktop-small {
+  @include m.desktop-small {
     max-width: 1200px;
   }
+  @include m.qhd {
+    max-width: 1800px;
+  }
+  @include m.uhd-4k {
+    max-width: 2400px;
+  }
+  @include m.retina-display {
+    max-width: 2500px;
+  }
+  @include m.uhd-5k {
+    max-width: 3000px;
+  }
 
-  @include tablet {
-    max-width: 600px;
+  @include m.tablet {
+    max-width: 90%;
+  }
+
+  @media (max-height: 600px) and (orientation: landscape) {
+    padding: 20px 15px;
   }
 }
 
 .text-center_contacts {
-  font-size: 2rem;
+  font-family: var(--font-main);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 200;
+  color: var(--color-accent);
   text-align: center;
-  margin-bottom: 30px;
-  color: var(--color-text);
+  margin-bottom: clamp(15px, 4vh, 40px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
-  @include qhd {
-    font-size: 2.4rem;
-  }
-
-  @include uhd-4k {
-    font-size: 2.6rem;
-  }
-
-  @include uhd-5k {
-    font-size: 2.8rem;
-  }
-
-  @include macbook-retina {
-    font-size: 2.4rem;
-  }
-
-  @include imac-retina {
-    font-size: 2.8rem;
-  }
-
-  @include tablet {
-    font-size: 1.8rem;
-  }
-
-  @include mobile() {
-    font-size: 1.5rem;
-  }
+  opacity: 0;
+  animation: titleEntrance 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  will-change: transform, opacity;
 }
 
+// Grid
 .grid-contacts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 50px);
+  align-items: start;
 
-  @include tablet {
+  @include m.tablet {
     grid-template-columns: 1fr;
   }
 
-  @include mobile-xl() {
-    grid-template-columns: 1fr;
+  @include m.landscape {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 
-.contact-info {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.contact-info h3 {
-  font-size: 1.5rem;
+// Shared Styles
+%contact-title-shared {
+  font-family: var(--font-cards);
+  font-size: clamp(1.2rem, 2vw, 2.2rem);
   margin-bottom: 20px;
-
-  @include qhd {
-    font-size: 1.8rem;
-  }
-
-  @include uhd-4k {
-    font-size: 2rem;
-  }
-
-  @include uhd-5k {
-    font-size: 2.2rem;
-  }
-
-  @include macbook-retina {
-    font-size: 1.8rem;
-  }
-
-  @include imac-retina {
-    font-size: 2.2rem;
-  }
-
-  @include tablet {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.4rem;
-  }
-
-  @include mobile() {
-    font-size: 1.2rem;
-  }
-
-  @include mobile-xl() {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-.contact-info p {
-  margin: 10px 0;
-}
-
-.contact-info a {
   color: var(--color-primary);
-  text-decoration: none;
+
+  @include m.landscape {
+    margin-bottom: 10px;
+  }
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
-}
+// Info Card
+.contact-info {
+  font-family: var(--font-cards);
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  line-height: 1.6;
+  padding: clamp(20px, 3vh, 40px);
+  background: $contact-glass-bg;
+  border: 1px solid var(--bg-accordion);
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
 
-.contact-form {
-  font-size: 1rem;
-}
+  opacity: 0;
+  animation: cardReveal 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 0.3s;
+  will-change: transform, opacity;
 
-.contact-form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-
-  @include qhd {
-    font-size: 1.8rem;
+  h3 {
+    font-family: var(--font-cards);
+    font-size: clamp(1.2rem, 2vw, 2.2rem);
+    margin-bottom: 20px;
+    color: var(--text-main);
   }
 
-  @include uhd-4k {
-    font-size: 2rem;
-  }
-
-  @include uhd-5k {
-    font-size: 2.2rem;
-  }
-
-  @include macbook-retina {
-    font-size: 1.8rem;
-  }
-
-  @include imac-retina {
-    font-size: 2.2rem;
-  }
-
-  @include tablet {
-    font-size: 1.4rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  @include mobile() {
+  p {
+    font-family: var(--font-cards);
     font-size: 1.2rem;
+    color: var(--text-main);
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  strong {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: var(--text-main);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
   }
 }
 
-.form-group {
-  margin-bottom: 15px;
+// Form Card
+.contact-form {
+  @extend .contact-info;
+  animation-delay: 0.5s;
+
+  h3 {
+    @extend %contact-title-shared;
+  }
 }
 
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+// Inputs
+.form-group {
+  margin-bottom: clamp(10px, 2vh, 20px);
+  font-family: var(--font-cards);
+
+  label {
+    display: block;
+    font-weight: 200;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 }
 
 .form-control {
   width: 100%;
-  padding: 8px;
+  padding: clamp(10px, 1.5vh, 15px);
   font-size: 1rem;
-  border: 1px solid var(--color-primary);
-  border-radius: 4px;
+  background: rgba(var(--bg-dark-blue-rgb), 0.05);
+  border: 1px solid rgba(var(--bg-dark-blue-rgb), 0.2);
+  border-radius: 6px;
+  color: var(--text-black);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  @include macbook-retina {
-    font-size: 1.1rem;
-  }
-
-  @include imac-retina {
-    font-size: 1.2rem;
-  }
-
-  @include tablet {
-    font-size: 0.95rem;
-  }
-
-  @include mobile {
-    font-size: 0.9rem;
+  &:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(var(--color-secondary-rgb), 0.15);
   }
 }
 
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-primary);
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+  @include m.landscape {
+    min-height: 80px;
+  }
 }
 
+// Submit Button
 .submit-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: var(--color-primary);
+  width: clamp(200px, 40%, 100%);
+  display: block;
+  margin: clamp(1.5rem, 3vh, 2.5rem) auto 0;
+
+  padding: clamp(12px, 2vh, 20px) 30px;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  background-color: #0d1b399c;
+  backdrop-filter: blur(5px);
   color: var(--color-logo);
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: 1px solid var(--bg-accordion);
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  @include qhd {
-    margin-top: 20px;
-    padding: 14px 28px;
-    font-size: 1.2rem;
+  &:hover:not(:disabled) {
+    background-color: #2ecc7044;
+    color: #fff;
+    border-color: #2ecc71;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
   }
 
-  @include uhd-4k {
-    margin-top: 22px;
-    padding: 16px 32px;
-    font-size: 1.3rem;
+  &:disabled {
+    background-color: var(--text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: transparent;
   }
 
-  @include uhd-5k {
-    margin-top: 24px;
-    padding: 18px 36px;
-    font-size: 1.4rem;
+  @include m.tablet {
+    width: 100%;
+    margin: 20px 0 0;
   }
-
-  @include macbook-retina {
-    margin-top: 20px;
-    padding: 14px 28px;
-    font-size: 1.2rem;
-  }
-
-  @include imac-retina {
-    margin-top: 24px;
-    padding: 18px 36px;
-    font-size: 1.4rem;
-  }
-
-  @include tablet {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 0.95rem;
-  }
-
-  @include mobile {
-    display: block;
-    font-size: 0.9rem;
-    margin: 0 auto;
-    width: fit-content;
-  }
-}
-
-.submit-button:hover {
-  background-color: #2f503da9;
-  border-color: #2f503d;
-}
-
-.submit-button:disabled {
-  background-color: var(--text-muted);
-  border-color: transparent;
-  cursor: not-allowed;
 }

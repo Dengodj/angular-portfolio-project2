@@ -4,12 +4,14 @@ import {
   Component,
   EventEmitter,
   OnDestroy,
+  OnInit,
   Output,
   inject,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
+
 interface Product {
   id: number;
   title: string;
@@ -21,31 +23,41 @@ interface Product {
 
 @Component({
   selector: 'app-search',
+  standalone: true,
   imports: [FormsModule, TranslateModule, CommonModule],
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnDestroy {
-  private _searchTerm = '';
-  private searchSubject = new Subject<string>();
-  private destroy$ = new Subject<void>();
-  private translate = inject(TranslateService);
-  private http = inject(HttpClient);
-  @Output() searchTermChange = new EventEmitter<string>();
+export class SearchComponent implements OnInit, OnDestroy {
+  private readonly http = inject(HttpClient);
+  private readonly translate = inject(TranslateService);
+
+  private readonly searchSubject = new Subject<string>();
+  private readonly destroy$ = new Subject<void>();
+
+  searchTerm = '';
   suggestions: Product[] = [];
   showSuggestions = false;
   private products: Product[] = [];
 
-  constructor() {
-    this.http.get<Product[]>('assets/products.json').subscribe({
-      next: (products) => {
-        this.products = products;
-      },
-      error: (error) => {
-        console.error('Error loading products:', error);
-      },
-    });
+  @Output() searchTermChange = new EventEmitter<string>();
 
+  ngOnInit(): void {
+    this.loadProducts();
+    this.setupSearchPipeline();
+  }
+
+  private loadProducts(): void {
+    this.http
+      .get<Product[]>('assets/data/products.json')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (data) => (this.products = data),
+        error: (err) => console.error('Error loading products:', err),
+      });
+  }
+
+  private setupSearchPipeline(): void {
     this.searchSubject
       .pipe(debounceTime(300), distinctUntilChanged(), takeUntil(this.destroy$))
       .subscribe((term) => {
@@ -53,25 +65,23 @@ export class SearchComponent implements OnDestroy {
       });
   }
 
-  get searchTerm(): string {
-    return this._searchTerm;
-  }
-
-  set searchTerm(value: string) {
-    this._searchTerm = value.trim();
-    this.showSuggestions = this._searchTerm.length >= 2;
-    this.searchSubject.next(this._searchTerm);
+  onInputChange(value: string): void {
+    const trimmed = value.trim();
+    this.searchTerm = trimmed;
+    this.showSuggestions = trimmed.length >= 2;
+    this.searchSubject.next(trimmed);
   }
 
   onSearch(): void {
-    if (this._searchTerm.length < 2) return;
-    this.searchTermChange.emit(this._searchTerm);
+    if (this.searchTerm.length < 2) return;
+    this.searchTermChange.emit(this.searchTerm);
     this.showSuggestions = false;
   }
 
   onSuggestionClick(suggestion: Product): void {
-    this._searchTerm = this.translate.instant(suggestion.translatedNameKey);
-    this.searchTermChange.emit(this._searchTerm);
+    const translatedName = this.translate.instant(suggestion.translatedNameKey);
+    this.searchTerm = translatedName;
+    this.searchTermChange.emit(this.searchTerm);
     this.showSuggestions = false;
   }
 
@@ -84,19 +94,20 @@ export class SearchComponent implements OnDestroy {
   private updateSuggestions(term: string): void {
     if (term.length < 2) {
       this.suggestions = [];
-      this.showSuggestions = false;
       return;
     }
+
     const lowerTerm = term.toLowerCase();
+    const keys = this.products.map((p) => p.translatedNameKey);
+
     this.translate
-      .get(this.products.map((p) => p.translatedNameKey))
-      .subscribe((translations) => {
-        this.suggestions = this.products.filter((product) =>
-          translations[product.translatedNameKey]
-            .toLowerCase()
-            .includes(lowerTerm)
-        );
-        this.showSuggestions = true;
+      .get(keys)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((translations: Record<string, string>) => {
+        this.suggestions = this.products.filter((product) => {
+          const translatedName = translations[product.translatedNameKey] || '';
+          return translatedName.toLowerCase().includes(lowerTerm);
+        });
       });
   }
 
