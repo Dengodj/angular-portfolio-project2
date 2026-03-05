@@ -251,40 +251,67 @@
 
 @include m.landscape {
   .header {
-    padding: 4px 0;
+    padding: 0;
+    height: 44px;
   }
+
   .container-header {
-    justify-content: space-between;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 15px;
   }
+
   .logo-container {
-    margin-right: 15px;
+    margin-right: 0;
+    padding-left: 5px;
     .logo {
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
     }
   }
+
   .logo-text {
-    display: none;
+    display: none !important;
   }
+
   .search-container {
-    position: static;
-    max-width: 200px;
-    margin: 0 10px;
-    flex: none;
+    position: static !important;
+    width: 100% !important;
+    max-width: 240px;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 auto;
+
+    .search-input {
+      padding: 4px 10px;
+      font-size: 0.7rem;
+    }
+
+    .search-button {
+      padding: 4px 12px;
+    }
   }
-  .search-input {
-    padding: 5px 10px;
-  }
-  .search-button {
-    padding: 5px 12px;
-  }
+
   .lang-switcher {
-    margin-left: 10px;
-    margin-right: 0;
+    margin: 0;
+    gap: 2px;
+    button {
+      padding: 2px 6px;
+      font-size: 0.6rem;
+    }
   }
+
   .hamburger {
+    display: flex;
     margin-left: 10px;
-    margin-right: 0;
+    width: 24px;
+    height: 14px;
+    span {
+      height: 1px;
+    }
   }
 }
 

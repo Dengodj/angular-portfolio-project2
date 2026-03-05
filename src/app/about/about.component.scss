@@ -64,6 +64,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
     background-attachment: scroll;
     background-position: center;
   }
+
+  @include m.landscape {
+    gap: 2.5rem;
+    padding: 1.5rem 0;
+  }
 }
 
 // Section Titles
@@ -91,6 +96,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
   @include m.mobile {
     letter-spacing: 2px;
     margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+  }
+
+  @include m.landscape {
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -152,6 +162,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
       text-align: left;
       padding: 20px 25px;
     }
+
+    @include m.landscape {
+      padding: 20px 30px;
+      font-size: 0.95rem;
+    }
   }
 }
 
@@ -171,6 +186,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
+
+  @include m.landscape {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
 }
 
 // Section 2 (Detailed Info)
@@ -226,6 +246,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
       margin-bottom: 0.8rem;
     }
   }
+
+  @include m.landscape {
+    padding: 20px;
+    gap: 0.5rem;
+  }
 }
 
 // Section 3 (Features)
@@ -251,6 +276,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
       gap: 15px;
     }
 
+    @include m.landscape {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
     > div {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(12px) saturate(140%);
@@ -264,6 +294,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      @include m.landscape {
+        padding: 15px 20px;
+      }
+
       &:hover {
         background: rgba(255, 255, 255, 0.06);
         border-color: rgba(0, 214, 201, 0.3);
@@ -298,6 +333,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
   .grid-about_page > div:hover &::before {
     width: 40px;
   }
+
+  @include m.landscape {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .text-about_page3 {
@@ -306,6 +346,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
   line-height: 1.7;
   color: var(--text-main);
   margin: 0;
+
+  @include m.landscape {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
 }
 
 .section-about4,
@@ -357,6 +402,10 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
     gap: 1rem;
     padding: 30px 20px;
   }
+
+  @include m.landscape {
+    padding: 25px;
+  }
 }
 
 .text-about_page4 {
@@ -369,6 +418,11 @@ $accent-gradient: linear-gradient(90deg, var(--text-main), var(--color-accent));
   text-wrap: pretty;
   opacity: 0.9;
   margin: 0;
+
+  @include m.landscape {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
 // Link (Explore Atmos)
@@ -425,6 +479,13 @@ a.join-our {
     padding: 16px 20px;
     letter-spacing: 2px;
   }
+
+  @include m.landscape {
+    margin-top: 1rem;
+    padding: 8px 20px;
+    min-width: 180px;
+    font-size: 0.8rem;
+  }
 }
 
 // Section Video (Atmos)
@@ -435,6 +496,10 @@ a.join-our {
 
   @include m.tablet {
     margin: 2rem auto;
+  }
+
+  @include m.landscape {
+    margin: 1.5rem auto;
   }
 
   .video-content-wrapper {
@@ -448,6 +513,12 @@ a.join-our {
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px) saturate(140%);
     -webkit-backdrop-filter: blur(15px) saturate(140%);
+
+    @include m.landscape {
+      grid-template-columns: 1fr 1fr;
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
 
     @include m.tablet {
       display: flex;
@@ -483,6 +554,11 @@ a.join-our {
       order: 3;
       text-align: center;
       margin: 1rem 0;
+    }
+
+    @include m.landscape {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
     }
   }
 
@@ -534,6 +610,11 @@ a.join-our {
       order: 1;
       text-align: center;
     }
+
+    @include m.landscape {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
   }
 
   .play-arrow {
@@ -553,6 +634,12 @@ a.join-our {
     @include m.tablet {
       order: 2;
       margin: 0.5rem auto;
+    }
+
+    @include m.landscape {
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
     }
 
     img {
@@ -602,6 +689,12 @@ a.join-our {
   border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 
+  @include m.landscape {
+    grid-template-columns: 1.2fr 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
   @include m.tablet {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -612,6 +705,9 @@ a.join-our {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    @include m.landscape {
+      gap: 0.8rem;
+    }
   }
 
   .text-about_page5 {
@@ -620,6 +716,11 @@ a.join-our {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
+
+    @include m.landscape {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
 
     ::ng-deep strong {
       color: var(--color-accent);
@@ -667,6 +768,10 @@ a.join-our {
       object-fit: cover;
       display: block;
     }
+
+    @include m.landscape {
+      display: none;
+    }
   }
 }
 
@@ -698,6 +803,12 @@ a.join-our {
     max-width: 800px;
     margin: 0 0 2rem 0;
     text-wrap: pretty;
+
+    @include m.landscape {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
   }
 
   .join-our {
@@ -708,5 +819,9 @@ a.join-our {
   @include m.tablet {
     margin-inline: 15px;
     padding: 2rem 1.5rem;
+  }
+
+  @include m.landscape {
+    padding: 1.5rem;
   }
 }

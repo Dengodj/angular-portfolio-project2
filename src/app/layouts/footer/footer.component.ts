@@ -18,7 +18,6 @@ import { Subject, filter, takeUntil } from 'rxjs';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit, OnDestroy {
-  
   public backgroundStyle: Record<string, string> = {
     'background-image': 'url(assets/img/studio-mixer.webp)',
   };

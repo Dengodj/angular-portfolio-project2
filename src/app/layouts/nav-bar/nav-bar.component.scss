@@ -38,13 +38,25 @@
 
   @include m.landscape {
     &.active {
-      top: 50px;
-      padding: 10px 15px;
-      gap: 8px;
-      max-height: 85vh;
-      flex-direction: row;
+      display: flex !important;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 38px;
+      padding: 0 10px;
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid rgba(0, 214, 201, 0.3);
+      flex-direction: row !important;
+      align-items: center;
       justify-content: center;
-      overflow-y: auto;
+      background-color: rgba(13, 27, 57, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      overflow: hidden;
     }
   }
 }
@@ -62,10 +74,12 @@
 
   @include m.landscape {
     flex-direction: row !important;
-    flex-wrap: wrap;
+    flex-wrap: nowrap !important;
     justify-content: center;
+    align-items: center;
     gap: 12px;
     width: auto;
+    height: 100%;
   }
 }
 
@@ -111,20 +125,22 @@
   }
 
   @include m.landscape {
-    width: auto;
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    border-bottom: none;
+    width: auto !important;
+    height: auto;
+    padding: 4px 8px !important;
+    font-size: 0.65rem !important;
+    border: none !important;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
 
     &.active {
-      background-color: transparent;
-      border-bottom: 2px solid var(--ui-turquoise);
+      background: none !important;
+      border-bottom: 2px solid var(--ui-turquoise) !important;
     }
   }
 }
 
 // ADAPTIVITY
-
 @include m.tablet {
   #navigation {
     padding: 10px 20px;
