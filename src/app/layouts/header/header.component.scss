@@ -253,12 +253,38 @@
   .header {
     padding: 4px 0;
   }
+  .container-header {
+    justify-content: space-between;
+  }
+  .logo-container {
+    margin-right: 15px;
+    .logo {
+      width: 28px;
+      height: 28px;
+    }
+  }
   .logo-text {
     display: none;
   }
   .search-container {
     position: static;
-    max-width: 250px;
+    max-width: 200px;
+    margin: 0 10px;
+    flex: none;
+  }
+  .search-input {
+    padding: 5px 10px;
+  }
+  .search-button {
+    padding: 5px 12px;
+  }
+  .lang-switcher {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  .hamburger {
+    margin-left: 10px;
+    margin-right: 0;
   }
 }
 
